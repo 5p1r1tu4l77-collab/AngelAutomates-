@@ -3,9 +3,9 @@
 # One-command automation for everything.
 # ============================================================================
 
-.PHONY: help setup dev test lint build-all build-web build-android build-ios \
-        build-linux build-macos build-windows clean antigravity gsd gsd-full \
-        gsd-ship obsidian-sync hooks status
+.PHONY: help get-to-work setup dev test lint build-all build-web build-android \
+        build-ios build-linux build-macos build-windows clean antigravity gsd \
+        gsd-full gsd-ship obsidian-sync hooks status
 
 .DEFAULT_GOAL := help
 
@@ -24,6 +24,52 @@ help: ## Show this help
 	@echo ""
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-18s$(NC) %s\n", $$1, $$2}'
+	@echo ""
+
+# ─── Get To Work ───────────────────────────────────────────────────────
+
+get-to-work: ## GET TO WORK - setup + GSD + antigravity + obsidian (the one command)
+	@echo ""
+	@echo "$(PURPLE)$(BOLD)"
+	@echo "   ██████╗ ███████╗████████╗  ████████╗ ██████╗ "
+	@echo "  ██╔════╝ ██╔════╝╚══██╔══╝  ╚══██╔══╝██╔═══██╗"
+	@echo "  ██║  ███╗█████╗     ██║        ██║   ██║   ██║"
+	@echo "  ██║   ██║██╔══╝     ██║        ██║   ██║   ██║"
+	@echo "  ╚██████╔╝███████╗   ██║        ██║   ╚██████╔╝"
+	@echo "   ╚═════╝ ╚══════╝   ╚═╝        ╚═╝    ╚═════╝ "
+	@echo ""
+	@echo "  ██╗    ██╗ ██████╗ ██████╗ ██╗  ██╗"
+	@echo "  ██║    ██║██╔═══██╗██╔══██╗██║ ██╔╝"
+	@echo "  ██║ █╗ ██║██║   ██║██████╔╝█████╔╝ "
+	@echo "  ██║███╗██║██║   ██║██╔══██╗██╔═██╗ "
+	@echo "  ╚███╔███╔╝╚██████╔╝██║  ██║██║  ██╗"
+	@echo "   ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝"
+	@echo "$(NC)"
+	@echo "$(CYAN)$(BOLD)  >> ACTIVATING ALL SYSTEMS <<$(NC)"
+	@echo ""
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@echo "$(GREEN)[1/4]$(NC) $(BOLD)SETUP$(NC) - Dependencies + hooks + vault init"
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@$(MAKE) setup --no-print-directory
+	@echo ""
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@echo "$(GREEN)[2/4]$(NC) $(BOLD)GSD$(NC) - Format + Analyze + Test + Report"
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@bash scripts/gsd.sh --quick
+	@echo ""
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@echo "$(GREEN)[3/4]$(NC) $(BOLD)OBSIDIAN$(NC) - Sync vault with project state"
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@bash scripts/obsidian-sync.sh --once
+	@echo ""
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@echo "$(GREEN)[4/4]$(NC) $(BOLD)ANTIGRAVITY$(NC) - Launching multi-terminal environment"
+	@echo "$(CYAN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@bash scripts/antigravity.sh --all
+	@echo ""
+	@echo "$(GREEN)$(BOLD)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
+	@echo "$(GREEN)$(BOLD)  ALL SYSTEMS GO. YOU ARE NOW AT WORK.$(NC)"
+	@echo "$(GREEN)$(BOLD)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo ""
 
 # ─── Setup ──────────────────────────────────────────────────────────────

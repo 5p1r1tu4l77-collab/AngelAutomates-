@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# ============================================================================
+# GET TO WORK
+# ============================================================================
+# The one command. Type it and walk away.
+# Runs: setup -> GSD pipeline -> Obsidian sync -> Antigravity multi-terminal
+# ============================================================================
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+exec make get-to-work
