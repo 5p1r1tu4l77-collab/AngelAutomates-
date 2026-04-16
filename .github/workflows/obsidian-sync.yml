@@ -1,0 +1,87 @@
+name: Obsidian Vault Sync
+
+on:
+  push:
+    branches: [main, 'claude/**']
+    paths:
+      - 'lib/**'
+      - 'test/**'
+      - 'pubspec.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-vault:
+    name: Sync Obsidian Vault
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate project status note
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          mkdir -p obsidian-vault/daily-notes
+
+          cat > "obsidian-vault/daily-notes/${DATE}.md" << EOF
+          ---
+          date: ${DATE}
+          type: daily-note
+          tags: [auto-generated, ci-sync]
+          ---
+
+          # Daily Build Log - ${DATE}
+
+          ## Git Info
+          - **Commit:** ${{ github.sha }}
+          - **Branch:** ${{ github.ref_name }}
+          - **Author:** ${{ github.actor }}
+          - **Message:** ${{ github.event.head_commit.message }}
+
+          ## Build Status
+          - CI triggered by push to \`${{ github.ref_name }}\`
+
+          ## Files Changed
+          \`\`\`
+          $(git diff --name-only HEAD~1 2>/dev/null || echo "Initial commit")
+          \`\`\`
+
+          ## Links
+          - [[projects/navarro-mission-control|Project Home]]
+          - [[automations/ci-pipeline|CI Pipeline]]
+          EOF
+
+      - name: Update project index
+        run: |
+          cat > "obsidian-vault/projects/navarro-mission-control.md" << 'EOF'
+          ---
+          type: project
+          tags: [flutter, cross-platform, automation]
+          ---
+
+          # Navarro Mission Control
+
+          ## Overview
+          Cross-platform Flutter application with full automation pipeline.
+
+          ## Tech Stack
+          - Flutter / Dart
+          - GitHub Actions CI/CD
+          - Obsidian Knowledge Base
+
+          ## Quick Links
+          - [[automations/ci-pipeline|CI Pipeline]]
+          - [[automations/gsd-pipeline|GSD Pipeline]]
+          - [[automations/antigravity|Antigravity Launcher]]
+
+          ## Recent Activity
+          See [[daily-notes/]] for build logs.
+          EOF
+
+      - name: Commit vault updates
+        run: |
+          git config user.name "AngelAutomates Bot"
+          git config user.email "bot@angelautomates.dev"
+          git add obsidian-vault/
+          git diff --cached --quiet || git commit -m "sync: update obsidian vault [skip ci]"
+          git push

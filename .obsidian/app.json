@@ -1,0 +1,8 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "daily-notes",
+  "attachmentFolderPath": "attachments",
+  "showLineNumber": true,
+  "strictLineBreaks": false
+}
