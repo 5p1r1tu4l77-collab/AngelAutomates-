@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Claude Code /goal state — per-developer, not shared
+/.claude/goals/active.json
+/.claude/goals/archive/
