@@ -1,0 +1,22 @@
+name: agent · case-study-writer
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+  repository_dispatch:
+    types: [pilot-completed, milestone-3mo]
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/pilots/completed/**"
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: case-study-writer
+      dry_run: ${{ inputs.dry_run || false }}

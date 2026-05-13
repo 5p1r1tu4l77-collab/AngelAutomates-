@@ -1,0 +1,23 @@
+name: event · on pilot completed → case-study + referral
+
+on:
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/pilots/completed/**"
+  repository_dispatch:
+    types: [pilot-completed]
+
+jobs:
+  case-study:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: case-study-writer
+      user_input: "A pilot was just moved to data/pilots/completed/. Produce anonymized + named case studies."
+  referral:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: referral-asker
+      user_input: "A pilot just completed successfully. Draft a referral ask for the client."

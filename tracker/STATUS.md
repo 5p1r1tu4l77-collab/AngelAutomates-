@@ -11,6 +11,17 @@ Append-only log of agent errors, compliance trips, and human-action-required ite
 - Manual playbook in `docs/ZERO-DOLLAR-PLAYBOOK.md`. Follow that until goal is `complete`.
 - Track every paid temptation here. Each $0 of restraint protects the goal.
 
+## Agent fleet at-a-glance
+
+- **Outbound pipeline (paid, paused)**: `prospector` → `icp-researcher` → `copywriter` → `outreach-dispatcher` → `reply-triage` → `appointment-setter` → `sales-ops`.
+- **Always-on (paid, paused)**: `kpi-tracker`, `compliance-monitor`.
+- **Inbound + content (paid, paused)**: `content-engine`.
+- **Strategy / weekly (paid, paused)**: `growth-strategist`, `recruiter`, `competitor-scanner`, `ai-tool-watcher`, `self-improver`.
+- **Zero-dollar mode (active during current goal)**: `network-outreacher`, `pilot-deliverer`, `referral-asker`, `case-study-writer`, `task-router`.
+- **Meta**: `task-router` consumes `tracker/task-board.md`; runs every 5 min once secrets land.
+
+See `docs/RESEARCH.md` for the why and `docs/PLAYBOOK.md` for the how.
+
 ## Open decisions (human)
 
 - [ ] Confirm primary niche: roofing (recommended) vs HVAC vs solar

@@ -1,0 +1,15 @@
+name: event · on new leads → icp-researcher
+
+on:
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/leads-new.csv"
+
+jobs:
+  trigger:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: icp-researcher
+      user_input: "New rows landed in data/leads-new.csv. Enrich them and emit enriched-CSV output."

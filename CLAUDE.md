@@ -30,6 +30,17 @@ This repo is not just a Flutter app — it also operates AngelAutomates, a produ
 - **Dashboard**: `tracker/dashboard.md` (rewritten by `kpi-tracker`).
 - **What's blocking right now**: `tracker/STATUS.md`.
 - **Strategy log**: `tracker/decisions.md`.
+- **Research dossier**: `docs/RESEARCH.md` — toolstack, business model knowledge, open questions.
+- **Research protocol**: `docs/RESEARCH-PROTOCOL.md` — how agents handle "I don't know" without guessing.
+- **Task board**: `tracker/task-board.md` — queue of work. `task-router` dispatches.
+- **Zero-dollar playbook**: `docs/ZERO-DOLLAR-PLAYBOOK.md` (active while goal 20260513-0687 is open).
+
+Twenty agents total (12 core + 8 meta/zero-dollar):
+- **Pipeline**: prospector, icp-researcher, copywriter, outreach-dispatcher, reply-triage, appointment-setter, sales-ops.
+- **Ops**: kpi-tracker, compliance-monitor, content-engine.
+- **Strategy**: growth-strategist, recruiter, competitor-scanner, ai-tool-watcher, self-improver.
+- **Zero-dollar mode**: network-outreacher, pilot-deliverer, referral-asker, case-study-writer.
+- **Meta**: task-router.
 
 Slash commands available:
 - `/goal` — long-running objective tracker (see above).
