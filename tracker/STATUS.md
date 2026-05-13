@@ -2,6 +2,15 @@
 
 Append-only log of agent errors, compliance trips, and human-action-required items. Newest at the bottom.
 
+## 🚧 Active goal constraint (goal 20260513-0687)
+
+**"Make money using 0 dollars"** — paid agent fleet is PAUSED until first $1,000 collected.
+
+- Do NOT enable scheduled workflows (cron triggers exist but secrets are unset → they fail closed).
+- Do NOT run `python scripts/run_agent.py <name>` outside of `--dry-run`.
+- Manual playbook in `docs/ZERO-DOLLAR-PLAYBOOK.md`. Follow that until goal is `complete`.
+- Track every paid temptation here. Each $0 of restraint protects the goal.
+
 ## Open decisions (human)
 
 - [ ] Confirm primary niche: roofing (recommended) vs HVAC vs solar
