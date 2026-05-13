@@ -1,0 +1,18 @@
+name: agent · content-engine
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # ~7a ET
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: content-engine
+      dry_run: ${{ inputs.dry_run || false }}

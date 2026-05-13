@@ -1,0 +1,72 @@
+name: agent-runner (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      agent:
+        description: "Agent name (matches .claude/agents/<name>.md)"
+        required: true
+        type: string
+      dry_run:
+        description: "Skip the API call; just log what would happen"
+        required: false
+        type: boolean
+        default: false
+      user_input:
+        description: "Optional override for the per-run user message"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  # Same agent can't double-run; different agents run in parallel.
+  group: agent-${{ inputs.agent }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMARTLEAD_API_KEY: ${{ secrets.SMARTLEAD_API_KEY }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          STRIPE_API_KEY: ${{ secrets.STRIPE_API_KEY }}
+          MXTOOLBOX_API_KEY: ${{ secrets.MXTOOLBOX_API_KEY }}
+          TWILIO_SID: ${{ secrets.TWILIO_SID }}
+          TWILIO_TOKEN: ${{ secrets.TWILIO_TOKEN }}
+          MONTHLY_BUDGET_USD: ${{ vars.MONTHLY_BUDGET_USD || '80' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: |
+          if [ -n "${{ inputs.user_input }}" ]; then
+            python scripts/run_agent.py "${{ inputs.agent }}" --user-input "${{ inputs.user_input }}"
+          else
+            python scripts/run_agent.py "${{ inputs.agent }}"
+          fi
+
+      - name: Commit logs & artifacts
+        run: |
+          git config user.name "angelautomates-bot"
+          git config user.email "bot@angelautomates.local"
+          git add tracker/ data/ content/ docs/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "agent(${{ inputs.agent }}): scheduled run $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "no changes to commit"
+          fi

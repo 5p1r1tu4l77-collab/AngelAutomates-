@@ -47,3 +47,22 @@ app.*.map.json
 # Claude Code /goal state — per-developer, not shared
 /.claude/goals/active.json
 /.claude/goals/archive/
+
+# Agent operations — runtime state, not source of truth
+/tracker/secrets/
+/tracker/KILL_SWITCH
+/tracker/locks/*.lock
+/tracker/runs/
+/data/drafts/_pending/*.md
+/data/drafts/_approved/*.md
+/data/drafts/_rejected/*.md
+/data/drafts/_sent/
+/data/stripe_queue/
+/data/docusign_queue/
+/data/bookings.csv
+/data/nurture.csv
+/data/payments.csv
+/data/permissions.csv
+__pycache__/
+*.egg-info/
+.venv/

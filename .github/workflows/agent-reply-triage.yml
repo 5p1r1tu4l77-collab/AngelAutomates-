@@ -1,0 +1,18 @@
+name: agent · reply-triage
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: reply-triage
+      dry_run: ${{ inputs.dry_run || false }}

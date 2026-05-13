@@ -19,11 +19,35 @@ Don't infer or create goals from ordinary tasks. Only act on `/goal` when the us
 
 Schema for `active.json`: see `.claude/goals/SCHEMA.md`.
 
+## Agency operations
+
+This repo is not just a Flutter app — it also operates AngelAutomates, a productized AI cold-outreach + appointment-setting agency. Twelve scheduled Claude agents under `.claude/agents/` are run on GitHub Actions cron via the reusable workflow `.github/workflows/_agent-runner.yml`.
+
+- **Operating playbook**: `docs/PLAYBOOK.md` (read this before changing agent behavior).
+- **Current offer**: `docs/OFFER.md` (locked for first 90 days; do not edit casually).
+- **Current ICP**: `docs/ICP.md` (changes go through the `recruiter` agent's PR).
+- **Human's daily routine**: `docs/HUMAN-LOOP.md`.
+- **Dashboard**: `tracker/dashboard.md` (rewritten by `kpi-tracker`).
+- **What's blocking right now**: `tracker/STATUS.md`.
+- **Strategy log**: `tracker/decisions.md`.
+
+Slash commands available:
+- `/goal` — long-running objective tracker (see above).
+- `/revenue` — print today's KPIs + outstanding human tasks (read-only, free).
+- `/onboard <lead_id>` — run the new-client onboarding sequence.
+
+When working on agent prompts or workflows, always check `docs/PLAYBOOK.md` "Conventions" and "Models" sections first. Never reach into `data/drafts/_pending/` programmatically — those are human-approval-gated by design.
+
 ## Common commands
 
 ```bash
-flutter pub get       # install deps
-flutter analyze       # static analysis (matches CI)
-flutter test          # run unit/widget tests (matches CI)
-flutter run -d chrome # run the web build locally
+flutter pub get        # install deps
+flutter analyze        # static analysis (matches CI)
+flutter test           # run unit/widget tests (matches CI)
+flutter run -d chrome  # run the web build locally
+
+# Agent ops
+pip install -r scripts/requirements.txt
+python scripts/run_agent.py <agent_name> --dry-run     # local dry-run
+DRY_RUN=1 python scripts/run_agent.py prospector       # same via env
 ```
