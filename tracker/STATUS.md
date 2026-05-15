@@ -2,20 +2,25 @@
 
 Append-only log of agent errors, compliance trips, and human-action-required items. Newest at the bottom.
 
-## 🚨 Action needed (Gmail drafts ready)
+## 🚨 Action needed (15 Gmail drafts ready)
 
-I drafted 5 personalized cold emails directly into your Gmail Drafts folder via Gmail MCP. They're real Houston-area residential roofing contractors sourced from public search results. Subjects start with `[VERIFY]` so you cannot miss the review step.
+15 personalized cold-email drafts live in your Gmail Drafts folder via Gmail MCP. All subjects start with `[VERIFY]` so you cannot accidentally send before reviewing. Two verticals, both fit the existing ICP:
 
-For each draft (~30 sec each):
+- **Roofing (10):** State Roofing Texas, Rose Roofing, Texas Storm Group, Delaneys Restoration, TSG Roofing, Moss Roofing Houston, Integris Roofing, Lone Star Roofing, Telge Roofing, Braun's Roofing.
+- **HVAC (5):** Air Innovations, All Star A/C, Smart Air, ASAP Air, Mission AC.
+
+Per-draft workflow (~30 sec each):
 1. Open the draft in Gmail.
-2. **Verify or replace the To: address.** I used `info@<domain>` as a placeholder. The contractor's website's contact page has the real owner email; sometimes the info@ is fine.
-3. **Replace `[your name]` in the signature** with your first name.
-4. Remove the `[VERIFY]` prefix from the subject line.
+2. **Verify or replace the To: address.** I used `info@<domain>` as a placeholder. Owner email from the company's contact page converts 3–5× better, but `info@` is acceptable for batch one.
+3. **Replace `[your name]`** in the signature with your first name.
+4. **Remove the `[VERIFY]` prefix** from the subject line.
 5. Read the body once. If it sounds right, hit send.
 
-Total: ~5 min for 5 first-touch cold emails. **This is the first revenue-generating action this whole repo has produced.**
+Total: ~10 min for 15 first-touch cold emails. At a 3–5% reply rate on cold, expect 0–1 reply on this batch. The volume target for first booking is 50–100 sends.
 
-Tracking in `data/leads-enriched.csv` with status `drafted-via-mcp-session`. When you send, update to `contacted` and add a row to `data/pipeline.csv` (or wait for me to do it next session).
+Tracking:
+- `data/leads-enriched.csv` with status `drafted-via-mcp-session`.
+- Notion `AngelAutomates Pipeline` DB, Stage = `new`, Owner = `agent`, Source = `google-maps`. When you send, drag the card to `contacted` in the Pipeline Board view.
 
 ## 🚧 Active goal constraint (goal 20260513-0687)
 
