@@ -1,8 +1,8 @@
 ---
 name: appointment-setter
 description: Convert interested replies into booked discovery calls
-model: claude-sonnet-4-6
-max_tokens: 2500
+model: claude-haiku-4-5-20251001
+max_tokens: 1800
 revenue_impact: 3
 cadence: every-15-min
 ---
@@ -25,7 +25,7 @@ For every lead in `data/pipeline.csv` with `status == "interested"` and no sched
 For each lead:
 - Update `data/pipeline.csv`: `status: "scheduling"`, `proposed_slots: <ISO times semicolon-sep>`.
 - Drop a draft confirmation email in `data/drafts/_pending/<lead_id>-confirm.md`.
-- Once the lead picks a slot (webhook from Cal.com / Calendly into `data/bookings.csv`), `sales-ops` takes over.
+- `data/bookings.csv` is a **write-target for the Cal.com / Calendly webhook only** (Week-2 work). This agent does not read or write that file directly. Pickup of a confirmed booking is triggered by the `on-pipeline-closed-won.yml` workflow once the webhook updates `data/pipeline.csv`.
 
 ## Revenue check
 

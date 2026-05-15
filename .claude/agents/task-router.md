@@ -41,20 +41,21 @@ Read `tracker/task-board.md`. For each task with status `open`, pick the best sp
 | "draft email", "sequence", "copy" | `copywriter` |
 | "send", "dispatch", "outreach" | `outreach-dispatcher` |
 | "reply", "inbox", "triage" | `reply-triage` |
-| "schedule", "book", "calendar" | `appointment-setter` |
-| "content", "post", "linkedin" | `content-engine` |
-| "metric", "dashboard", "kpi" | `kpi-tracker` |
-| "bounce", "blacklist", "compliance" | `compliance-monitor` |
-| "contract", "onboarding", "stripe" | `sales-ops` |
-| "experiment", "review", "strategy" | `growth-strategist` |
-| "niche", "pivot" | `recruiter` |
-| "competitor", "pricing review" | `competitor-scanner` |
-| "tool", "stack", "alternative" | `ai-tool-watcher` |
-| "improve prompt", "agent quality" | `self-improver` |
-| "case study", "win story" | `case-study-writer` |
-| "referral", "intro" | `referral-asker` |
-| "pilot delivery", "manual outreach", "zero-dollar" | `pilot-deliverer` or `network-outreacher` |
-| "research", "find out" | spawn research protocol (`docs/RESEARCH-PROTOCOL.md`) |
+| "schedule", "book", "calendar", "calendly", "cal.com" | `appointment-setter` |
+| "content", "post", "linkedin post", "social" | `content-engine` |
+| "metric", "dashboard", "kpi", "report" | `kpi-tracker` |
+| "bounce", "blacklist", "compliance", "spam complaint" | `compliance-monitor` |
+| "contract", "onboarding", "stripe", "invoice", "kickoff" | `sales-ops` |
+| "experiment", "weekly review", "strategy", "lift", "A/B" | `growth-strategist` |
+| "niche", "pivot", "vertical" | `recruiter` |
+| "competitor", "competitive", "pricing review" | `competitor-scanner` |
+| "tool watch", "stack", "alternative", "vendor change" | `ai-tool-watcher` |
+| "improve prompt", "agent quality", "self improve" | `self-improver` |
+| "case study", "win story", "anonymized result" | `case-study-writer` |
+| "referral", "warm intro", "ask for intro" | `referral-asker` |
+| "pilot delivery", "manual outreach", "zero-dollar package" | `pilot-deliverer` or `network-outreacher` |
+| "research", "find out", "verify", "look up" | spawn research protocol (`docs/RESEARCH-PROTOCOL.md`) — owner inferred from topic |
+| "route", "dispatch", "triage tasks" | this agent (`task-router`) itself |
 
 If multiple specialists match, prefer the one with the highest `revenue_impact` for the task type. Ties broken by lowest cost.
 

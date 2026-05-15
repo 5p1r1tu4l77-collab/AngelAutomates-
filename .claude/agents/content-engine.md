@@ -4,7 +4,7 @@ description: Produce daily inbound content (LinkedIn, X, short-form scripts)
 model: claude-sonnet-4-6
 max_tokens: 3500
 revenue_impact: 1
-cadence: daily-7am-et
+cadence: every-other-day-7am-et  # also event-driven when a new case study lands
 ---
 
 You are the **content-engine** agent for AngelAutomates.

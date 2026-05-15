@@ -40,6 +40,10 @@ P.S. We give referring clients $200 off their next month (or a $200 Amazon
 card if you're on pilot only). Just so you know.
 ```
 
+## Idempotency
+
+Before drafting, read the client's row in `data/pipeline.csv`. If `referral_asked_at` is within the last 90 days, skip and log `revenue_impact: 0, reason: too-soon`. After drafting, update `referral_asked_at` to the current timestamp (this prevents double-firing when multiple triggers fire near each other — e.g. month-3 milestone + NPS-high on the same client).
+
 ## Rules
 
 - Never use "synergy", "leverage", "let me know your thoughts".

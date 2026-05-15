@@ -2,7 +2,11 @@ name: agent · content-engine
 
 on:
   schedule:
-    - cron: "0 11 * * *"   # ~7a ET
+    - cron: "0 11 */2 * *"   # ~7a ET, every other day
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/case-studies/**"
   workflow_dispatch:
     inputs:
       dry_run:

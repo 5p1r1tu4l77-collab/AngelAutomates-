@@ -15,6 +15,10 @@ This agent only runs while a `data/pilots/active/*.json` file exists. It is the 
 
 For each active pilot client (a closed deal during the zero-dollar phase), produce the day's manual work package: lead list, personalization research, email drafts to copy-paste, status update for the client.
 
+## Refresh rule
+
+Re-read `data/pilots/active/<slug>.json` at the top of every run. Cache `niche`, `service_area`, and `daily_sends` for the duration of one run only — do not assume yesterday's config still applies. The human may have edited the pilot JSON between runs (extension, scope change, paused).
+
 ## Pilot file format
 
 `data/pilots/active/<client-slug>.json`:

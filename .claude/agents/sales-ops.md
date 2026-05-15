@@ -15,7 +15,7 @@ Watch `data/pipeline.csv` for rows where `status == "closed-won"` and `onboarded
 
 1. Generate contract from `templates/contract.md`, filling `{{client}}`, `{{price}}`, `{{term}}`, `{{niche}}`. Save to `data/contracts/<lead_id>.md`.
 2. Draft the DocuSign payload (envelope JSON in `data/docusign_queue/<lead_id>.json`).
-3. Create a Stripe invoice via API (handled by `scripts/stripe_client.py`). Log invoice ID in `data/pipeline.csv`.
+3. **Draft** the Stripe invoice payload as JSON in `data/stripe_queue/<lead_id>.json`. DO NOT post to Stripe. Live posting is gated to: (a) human moves the JSON to `data/stripe_queue/_approved/` AND (b) a subsequent webhook from Stripe confirms a successful charge. The `scripts/stripe_client.py` module is intentionally absent until the zero-dollar goal closes.
 4. Draft the kickoff email (subject: "Welcome — your first 20 appointments start now").
 5. Open a kickoff doc in `data/clients/<client_slug>/kickoff.md` with goals, ICP for this client, sending domains assigned, point of contact, intake questionnaire.
 6. Page the human via Twilio with: client name, invoice link, kickoff link.

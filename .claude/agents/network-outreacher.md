@@ -63,6 +63,10 @@ After sending, append to `data/network-touches.csv`:
 - date, channel, target, status (sent, no-reply, interested, booked)
 ```
 
+## Idempotency
+
+Before proposing any contact in today's package, read `data/network-touches.csv`. Skip anyone touched in the last 30 days (LinkedIn / FB / network), or 14 days (Reddit). Never re-send the same DM verbatim — if a previous touch failed and we're retrying, change the angle.
+
 ## Rules
 
 - **Never** automate sending. Output stays in markdown for human copy-paste.

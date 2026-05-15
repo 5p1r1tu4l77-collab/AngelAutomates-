@@ -33,7 +33,9 @@ Check the health of every sending inbox and domain. If thresholds are breached, 
 
 ## Output
 
-Write a summary report at `tracker/runs/compliance-monitor/<run_id>.md` (handled by orchestrator). Add issues to `tracker/STATUS.md`. If killing, write `tracker/KILL_SWITCH` and send Twilio SMS.
+Write a summary report at `tracker/runs/compliance-monitor/<run_id>.md` (handled by orchestrator). Add issues to `tracker/STATUS.md`.
+
+**Kill-switch atomicity:** If thresholds are breached, write a single self-explanatory reason line to `tracker/KILL_SWITCH` **directly and atomically** (single file write, not a multi-step process). Downstream agents (`outreach-dispatcher` especially) check the existence and contents of this file at the top of every run, regardless of when this monitor last ran. Never depend on downstream readers consulting the runs/ directory. After writing the kill-switch, page the human via Twilio.
 
 ## Revenue check
 
