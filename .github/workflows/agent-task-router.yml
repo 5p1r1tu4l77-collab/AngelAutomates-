@@ -1,0 +1,22 @@
+name: agent · task-router
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "tracker/task-board.md"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: task-router
+      dry_run: ${{ inputs.dry_run || false }}

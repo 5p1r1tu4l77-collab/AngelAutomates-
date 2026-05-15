@@ -1,0 +1,54 @@
+name: free · gmail send (approved drafts only)
+
+on:
+  schedule:
+    # 4× daily, weekdays, business hours-ish in US ET (13/16/19/22 UTC)
+    - cron: "0 13,16,19,22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      cap:
+        description: "Max emails to send this run (Gmail safe ≤25/day)"
+        required: false
+        default: "25"
+      dry_run:
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gmail-send
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60   # respects 90-second inter-send pause
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Send drafts via Gmail SMTP
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_DAILY_CAP: ${{ inputs.cap || '25' }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: python scripts/send_via_gmail.py
+
+      - name: Commit sent log
+        run: |
+          git config user.name "angelautomates-bot"
+          git config user.email "bot@angelautomates.local"
+          git add tracker/log.jsonl data/drafts/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "send: gmail batch $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "no sends to commit"
+          fi

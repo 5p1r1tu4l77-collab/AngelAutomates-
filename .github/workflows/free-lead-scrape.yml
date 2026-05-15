@@ -1,0 +1,66 @@
+name: free · lead scrape (Google Maps + email find)
+
+on:
+  schedule:
+    - cron: "0 14 * * 1-5"   # weekdays ~10a ET
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Search query, e.g. 'roofing contractor Houston TX'"
+        required: true
+        default: "roofing contractor Houston TX"
+      max_results:
+        description: "Max results to scrape (cap 50 to stay friendly)"
+        required: false
+        default: "50"
+      run_email_finder:
+        description: "Run find_email.py after scrape"
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: free-lead-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        run: |
+          pip install -r scripts/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Scrape Google Maps
+        env:
+          SCRAPE_QUERY: ${{ inputs.query || 'roofing contractor Houston TX' }}
+          SCRAPE_MAX: ${{ inputs.max_results || '50' }}
+        run: python scripts/scrape_google_maps.py --max "$SCRAPE_MAX"
+
+      - name: Find emails
+        if: ${{ inputs.run_email_finder != false }}
+        run: python scripts/find_email.py --limit 25
+
+      - name: Commit results
+        run: |
+          git config user.name "angelautomates-bot"
+          git config user.email "bot@angelautomates.local"
+          git add data/leads-new.csv tracker/log.jsonl 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "scrape: lead batch $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "no new leads"
+          fi

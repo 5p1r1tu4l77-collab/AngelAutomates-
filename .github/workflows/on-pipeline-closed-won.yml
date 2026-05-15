@@ -1,0 +1,23 @@
+name: event · on closed-won → sales-ops + kpi-tracker
+
+on:
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/pipeline.csv"
+  repository_dispatch:
+    types: [closed-won, payment-received]
+
+jobs:
+  onboard:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: sales-ops
+      user_input: "data/pipeline.csv changed — check for closed-won rows missing onboarded_at and run the onboarding sequence."
+  refresh-kpis:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: kpi-tracker
+      user_input: "Pipeline updated — refresh tracker/dashboard.md immediately."

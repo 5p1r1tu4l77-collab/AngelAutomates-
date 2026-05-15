@@ -1,0 +1,15 @@
+name: event · on draft approved → outreach-dispatcher
+
+on:
+  push:
+    branches: [main, "claude/**"]
+    paths:
+      - "data/drafts/_approved/**"
+
+jobs:
+  trigger:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: outreach-dispatcher
+      user_input: "Approved drafts queued in data/drafts/_approved/. Dispatch in respect of daily caps and compliance kill-switch."

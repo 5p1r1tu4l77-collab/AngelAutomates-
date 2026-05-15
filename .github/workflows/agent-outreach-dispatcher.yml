@@ -1,0 +1,19 @@
+name: agent · outreach-dispatcher
+
+on:
+  # 8a–6p ET, weekdays. ET = UTC-5 (winter) / UTC-4 (summer). We send during 12:00–22:00 UTC to bracket both.
+  schedule:
+    - cron: "*/15 12-22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: outreach-dispatcher
+      dry_run: ${{ inputs.dry_run || false }}

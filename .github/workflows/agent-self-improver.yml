@@ -1,0 +1,18 @@
+name: agent · self-improver
+
+on:
+  schedule:
+    - cron: "0 13 * * 3"   # Wednesdays ~9a ET
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: self-improver
+      dry_run: ${{ inputs.dry_run || false }}

@@ -1,0 +1,20 @@
+name: event · on gmail reply (from Make.com webhook)
+
+on:
+  repository_dispatch:
+    types: [gmail-reply-received]
+
+jobs:
+  triage:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: reply-triage
+      user_input: |
+        New Gmail reply received via Make.com webhook.
+        From: ${{ github.event.client_payload.from }}
+        Subject: ${{ github.event.client_payload.subject }}
+        Snippet: ${{ github.event.client_payload.snippet }}
+        Thread: ${{ github.event.client_payload.thread_id }}
+
+        Pull the full thread, classify, draft response into data/drafts/_pending/.
