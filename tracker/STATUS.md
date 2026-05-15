@@ -2,25 +2,53 @@
 
 Append-only log of agent errors, compliance trips, and human-action-required items. Newest at the bottom.
 
-## 🚨 Action needed (15 Gmail drafts ready)
+## 🚨 Action needed — 20 Gmail drafts + Reply Playbook ready
 
-15 personalized cold-email drafts live in your Gmail Drafts folder via Gmail MCP. All subjects start with `[VERIFY]` so you cannot accidentally send before reviewing. Two verticals, both fit the existing ICP:
+**Two batches of cold-email drafts now sit in your Gmail Drafts folder.** All subjects start with `[VERIFY]` or `[VERIFY-V2]`.
 
-- **Roofing (10):** State Roofing Texas, Rose Roofing, Texas Storm Group, Delaneys Restoration, TSG Roofing, Moss Roofing Houston, Integris Roofing, Lone Star Roofing, Telge Roofing, Braun's Roofing.
-- **HVAC (5):** Air Innovations, All Star A/C, Smart Air, ASAP Air, Mission AC.
+### Tier A — 5 personalized drafts with real owner names (send these first)
 
-Per-draft workflow (~30 sec each):
-1. Open the draft in Gmail.
-2. **Verify or replace the To: address.** I used `info@<domain>` as a placeholder. Owner email from the company's contact page converts 3–5× better, but `info@` is acceptable for batch one.
-3. **Replace `[your name]`** in the signature with your first name.
-4. **Remove the `[VERIFY]` prefix** from the subject line.
-5. Read the body once. If it sounds right, hit send.
+These have been enriched: real owner first names in greeting + best-guess direct email. Higher conversion than info@ generic drafts.
 
-Total: ~10 min for 15 first-touch cold emails. At a 3–5% reply rate on cold, expect 0–1 reply on this batch. The volume target for first booking is 50–100 sends.
+| Company | Owner | Subject prefix | Notes |
+|---|---|---|---|
+| Integris Roofing | **Cody Zegarrundo** (founder) | `[VERIFY-V2] integris pipeline — 1 question` | LinkedIn also shows Michael Thrower as CEO — verify before sending |
+| Rose Roofing | **Jonathan Rose** (3rd-gen, took over 2017) | `[VERIFY-V2] jonathan — 3rd-gen rose roofing` | Wife Jessica co-runs |
+| Telge Roofing | **Roy Campbell** (owner since 2013) | `[VERIFY-V2] roy — keeping cypress crews booked` | 28k customers, GAF Master Elite |
+| Braun's Roofing | **Skeeter Braun** (founder/pres, 1987) | `[VERIFY-V2] skeeter — 46 years + qualified pipeline?` | Skeeter is the real public name |
+| Air Innovations | **Troy Behrens** (owner, w/ wife Kelly) | `[VERIFY-V2] troy — pre-summer AC pipeline` | HVAC, Cypress |
 
-Tracking:
-- `data/leads-enriched.csv` with status `drafted-via-mcp-session`.
-- Notion `AngelAutomates Pipeline` DB, Stage = `new`, Owner = `agent`, Source = `google-maps`. When you send, drag the card to `contacted` in the Pipeline Board view.
+**Workflow per V2 draft (~45 sec):**
+1. Verify the owner email guess (`firstname@domain.com`). If LinkedIn or BBB shows different, use that. If unsure, replace To: with `info@<domain>` (fall back to V1's address).
+2. Replace `[your name]` in signature.
+3. Remove `[VERIFY-V2]` from subject.
+4. Send.
+5. **Delete the V1 [VERIFY] draft for the same company** (don't send both).
+
+### Tier B — 10 generic-greeting drafts (`info@`, "hi there")
+
+The other 10 drafts (State Roofing TX, Texas Storm Group, Delaneys, TSG, Moss, Lone Star, All Star A/C, Smart Air, ASAP Air, Mission AC) still use info@ + "hi there" since I couldn't pin owner names confidently. Send as-is, or skip in this batch and ask me to enrich them next session.
+
+### Tier C — Reply Playbook (new)
+
+📋 **`docs/REPLY-PLAYBOOK.md`** + Notion page: `Reply Playbook — what to do when a prospect responds`.
+
+When a reply comes in:
+1. Classify (interested / curious / not-interested / OOO).
+2. Paste the prefab reply with these 6 pre-baked time slots (verified open on your calendar):
+   - Tue May 19, 11:00 AM CT
+   - Wed May 20, 2:00 PM CT
+   - Thu May 21, 10:30 AM CT
+   - Fri May 22, 1:00 PM CT
+   - Tue May 26, 11:00 AM CT
+   - Wed May 27, 2:00 PM CT
+3. They pick → you create a Google Calendar event with their email + Meet link → Notion card moves to `scheduled`.
+
+Goal: <60 seconds from opening a reply to having a meeting on the books.
+
+### Tracking
+- `data/leads-enriched.csv`: 15 rows, owner names filled for the 5 V2 leads.
+- Notion `AngelAutomates Pipeline`: 15 cards, Stage=new. Owner-name leads have `Contact` filled. Drag to `contacted` after you send.
 
 ## 🚧 Active goal constraint (goal 20260513-0687)
 
