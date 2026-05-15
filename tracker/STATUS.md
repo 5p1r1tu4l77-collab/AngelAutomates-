@@ -2,6 +2,21 @@
 
 Append-only log of agent errors, compliance trips, and human-action-required items. Newest at the bottom.
 
+## 🚨 Action needed (Gmail drafts ready)
+
+I drafted 5 personalized cold emails directly into your Gmail Drafts folder via Gmail MCP. They're real Houston-area residential roofing contractors sourced from public search results. Subjects start with `[VERIFY]` so you cannot miss the review step.
+
+For each draft (~30 sec each):
+1. Open the draft in Gmail.
+2. **Verify or replace the To: address.** I used `info@<domain>` as a placeholder. The contractor's website's contact page has the real owner email; sometimes the info@ is fine.
+3. **Replace `[your name]` in the signature** with your first name.
+4. Remove the `[VERIFY]` prefix from the subject line.
+5. Read the body once. If it sounds right, hit send.
+
+Total: ~5 min for 5 first-touch cold emails. **This is the first revenue-generating action this whole repo has produced.**
+
+Tracking in `data/leads-enriched.csv` with status `drafted-via-mcp-session`. When you send, update to `contacted` and add a row to `data/pipeline.csv` (or wait for me to do it next session).
+
 ## 🚧 Active goal constraint (goal 20260513-0687)
 
 **"Make money using 0 dollars"** — paid agent fleet is PAUSED until first $1,000 collected.
