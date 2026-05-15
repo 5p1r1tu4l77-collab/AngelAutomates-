@@ -1,0 +1,22 @@
+name: event · on cal.com booking (from Make.com webhook)
+
+on:
+  repository_dispatch:
+    types: [calendar-booking-created, calendar-booking-rescheduled]
+
+jobs:
+  prep-call:
+    uses: ./.github/workflows/_agent-runner.yml
+    secrets: inherit
+    with:
+      agent: sales-ops
+      user_input: |
+        New Cal.com booking via Make.com webhook.
+        Lead email: ${{ github.event.client_payload.lead_email }}
+        Lead name: ${{ github.event.client_payload.lead_name }}
+        Start: ${{ github.event.client_payload.start_time }}
+        End: ${{ github.event.client_payload.end_time }}
+
+        Find the lead in data/pipeline.csv, set stage=scheduled, pre-stage
+        the contract template in data/contracts/_pending/, draft a 12-min
+        pre-call brief into data/drafts/_pending/. Do NOT send anything.
