@@ -44,7 +44,12 @@ jobs:
       - name: Run agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER || '' }}
           SMARTLEAD_API_KEY: ${{ secrets.SMARTLEAD_API_KEY }}
+          BREVO_SMTP_KEY: ${{ secrets.BREVO_SMTP_KEY }}
           APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
           STRIPE_API_KEY: ${{ secrets.STRIPE_API_KEY }}
           MXTOOLBOX_API_KEY: ${{ secrets.MXTOOLBOX_API_KEY }}

@@ -27,6 +27,7 @@ import uuid
 from datetime import datetime, timezone
 
 import guards
+import llm_client
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 AGENTS = REPO / ".claude" / "agents"
@@ -35,6 +36,10 @@ STATUS = REPO / "tracker" / "STATUS.md"
 
 DEFAULT_MAX_TOKENS = 1500
 DEFAULT_MODEL = "claude-haiku-4-5-20251001"
+
+# Agents whose outputs touch sensitive (post-interest) data — prefer providers
+# that don't train on free-tier inputs.
+SENSITIVE_AGENTS = {"sales-ops", "reply-triage", "appointment-setter", "pilot-deliverer", "referral-asker"}
 
 
 def parse_agent(name: str) -> tuple[dict, str]:
@@ -66,25 +71,17 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def call_anthropic(model: str, system: str, user: str, max_tokens: int) -> dict:
-    """Call the Anthropic API. Imported lazily so DRY_RUN paths need no SDK."""
-    from anthropic import Anthropic
-
-    client = Anthropic()
-    resp = client.messages.create(
-        model=model,
-        max_tokens=max_tokens,
-        system=system,
-        messages=[{"role": "user", "content": user}],
-    )
-    text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
-    usage = resp.usage
-    cost = guards.estimate_cost(model, usage.input_tokens, usage.output_tokens)
+def call_llm(agent_name: str, model: str, system: str, user: str, max_tokens: int) -> dict:
+    """Call the LLM via the provider-agnostic abstraction."""
+    data_class = "sensitive" if agent_name in SENSITIVE_AGENTS else "public"
+    r = llm_client.call(model, system, user, max_tokens, data_class=data_class)
     return {
-        "text": text,
-        "input_tokens": usage.input_tokens,
-        "output_tokens": usage.output_tokens,
-        "cost_usd": cost,
+        "text": r.text,
+        "provider": r.provider,
+        "concrete_model": r.model,
+        "input_tokens": r.input_tokens,
+        "output_tokens": r.output_tokens,
+        "cost_usd": r.cost_usd,
     }
 
 
@@ -116,9 +113,9 @@ def main() -> int:
         start = time.monotonic()
         try:
             if args.dry_run:
-                result = {"text": "[dry-run: model not called]", "input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
+                result = {"text": "[dry-run: model not called]", "provider": "dry-run", "concrete_model": model, "input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
             else:
-                result = call_anthropic(model, system_prompt, args.user_input, max_tokens)
+                result = call_llm(args.agent, model, system_prompt, args.user_input, max_tokens)
         except Exception as e:
             append_log({
                 "ts": started, "agent": args.agent, "run_id": run_id,
@@ -139,12 +136,14 @@ def main() -> int:
             "ts": started, "agent": args.agent, "run_id": run_id,
             "status": "ok", "duration_s": duration,
             "model": model,
+            "provider": result.get("provider", "unknown"),
+            "concrete_model": result.get("concrete_model", model),
             "input_tokens": result["input_tokens"], "output_tokens": result["output_tokens"],
             "cost_usd": result["cost_usd"],
             "revenue_impact": revenue_impact,
             "dry_run": args.dry_run,
         })
-        print(f"[{args.agent}] ok in {duration}s (${result['cost_usd']:.4f})")
+        print(f"[{args.agent}] ok in {duration}s via {result.get('provider', '?')} (${result['cost_usd']:.4f})")
     return 0
 
 
