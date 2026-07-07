@@ -2,6 +2,8 @@
 
 Portfolio and demo sites for Angel Automates — fast, affordable websites and automations for small businesses.
 
+**Live site:** https://5p1r1tu4l77-collab.github.io/AngelAutomates-/
+
 ## What's in this repo
 
 - `index.html` — main portfolio / services landing page

@@ -1,5 +1,14 @@
 # Outreach Kit — Landing Your First Website Clients
 
+## Your live links (use these in every message)
+
+- Portfolio: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/
+- Restaurant demo: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/restaurant/
+- Contractor demo: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/contractor/
+- Salon demo: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/salon/
+
+Where a template says [demo link], paste the demo that matches their business type (restaurant → restaurant demo, plumber/roofer → contractor demo, barber/spa → salon demo). When in doubt, send the portfolio link.
+
 ## The offer (memorize this)
 
 > "I build clean, mobile-friendly websites for local businesses — $350 flat, done in under a week, hosting included free. Half up front, half when you approve it. If you don't love it, you don't pay the second half."
