@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Visibility Report — {{BUSINESS_NAME}}</title>
+<meta name="description" content="Online visibility report for {{BUSINESS_NAME}} in {{CITY}}, prepared by Angel Automates.">
+<style>
+  /*
+    VISIBILITY AUDIT TEMPLATE — fill placeholders, set the scores, done.
+    HOW TO SCORE each category 0-100 from PUBLIC info only (never invent facts):
+      Google Business Profile — claimed? hours/categories/photos/description filled? posts recent?
+      Website               — exists? loads fast? clear services + phone + address?
+      Mobile Experience     — open their site on a phone: readable? tap targets? no pinch-zoom?
+      Reviews & Reputation  — star rating, review count vs competitors, owner replies?
+      Findability (SEO)      — do they rank/appear searching "[category] [city]"? NAP consistent?
+    Overall = rough average. Colors auto-follow the score via the .s-good/.s-warn/.s-bad classes.
+    Set each row's class: green >=80, amber 50-79, red <50. Keep verdicts factual and specific.
+    This page is print-friendly — the prospect can save it as a PDF.
+  */
+  :root{
+    --brand:#2b6cb0; --brand-dk:#1e4e8c; --tint:#ebf4ff; --ink:#1a2a3a;
+    --paper:#ffffff; --muted:#5f6c7b; --line:#e3e8ee;
+    --good:#1f9d55; --warn:#dd9b1a; --bad:#d3453b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#f2f5f8;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .sheet{max-width:840px;margin:0 auto;background:var(--paper);box-shadow:0 1px 30px rgba(20,40,60,.08)}
+  .wrap{padding:0 40px}
+  a{color:var(--brand-dk)}
+
+  /* header */
+  .top{background:var(--ink);color:#fff;padding:34px 40px}
+  .top .brand{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+  .top .brand span{color:#6db3ff}
+  .top .kick{color:#93a7bd;font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;margin:22px 0 8px}
+  .top h1{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+  .top .meta{color:#93a7bd;font-size:.9rem;margin-top:10px}
+
+  /* score hero */
+  .score-hero{display:flex;align-items:center;gap:32px;flex-wrap:wrap;padding:38px 40px;border-bottom:1px solid var(--line);background:var(--tint)}
+  .gauge{--v:{{OVERALL_SCORE}};position:relative;width:150px;height:150px;border-radius:50%;flex:0 0 auto;
+    background:conic-gradient(var(--brand) calc(var(--v)*1%), #d9e2ec 0);display:grid;place-items:center}
+  .gauge::before{content:"";position:absolute;inset:14px;background:var(--paper);border-radius:50%}
+  .gauge b{position:relative;font-size:2.6rem;font-weight:800;line-height:1}
+  .gauge small{position:relative;display:block;text-align:center;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+  .score-hero .verdict{flex:1;min-width:260px}
+  .score-hero .verdict h2{font-size:1.25rem;margin-bottom:8px}
+  .score-hero .verdict p{color:var(--muted);font-size:.98rem}
+
+  /* scorecards */
+  section{padding:36px 40px;border-bottom:1px solid var(--line)}
+  .lbl{color:var(--brand);font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;margin-bottom:16px}
+  .row{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+  .row:first-of-type{border-top:none}
+  .pill{flex:0 0 52px;text-align:center;font-weight:800;font-size:1.05rem;padding:8px 0;border-radius:8px;color:#fff}
+  .s-good .pill{background:var(--good)} .s-warn .pill{background:var(--warn)} .s-bad .pill{background:var(--bad)}
+  .row .body h3{font-size:1.02rem;margin-bottom:3px}
+  .row .body p{color:var(--muted);font-size:.93rem}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  .s-good .tag{background:#e3f6ec;color:var(--good)} .s-warn .tag{background:#fbf1d9;color:#b07d10} .s-bad .tag{background:#fae3e1;color:var(--bad)}
+
+  /* cost box */
+  .cost{background:#fff7f6;border:1px solid #f3cfca;border-radius:12px;padding:22px 24px}
+  .cost h3{color:var(--bad);font-size:1.05rem;margin-bottom:8px}
+  .cost p{color:#7a3e39;font-size:.96rem}
+
+  /* action plan */
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{text-align:left;padding:12px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  td .prio{font-weight:800}
+  .p1{color:var(--bad)} .p2{color:var(--warn)} .p3{color:var(--muted)}
+  td .fix{color:var(--muted)}
+  .price{font-weight:700;white-space:nowrap}
+
+  /* CTA */
+  .cta{background:var(--ink);color:#fff;text-align:center;padding:44px 40px}
+  .cta h2{font-size:1.5rem;margin-bottom:10px}
+  .cta p{color:#b9c7d6;max-width:520px;margin:0 auto 22px}
+  .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;padding:14px 30px;border-radius:9px;text-decoration:none}
+  .btn:hover{background:#3f7fc4}
+  .fine{color:#7f93a8;font-size:.82rem;margin-top:18px}
+  footer{padding:20px 40px;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  @media (max-width:560px){ .wrap,.top,section,.score-hero,.cta,footer{padding-left:22px;padding-right:22px} }
+  @media print{ body{background:#fff} .sheet{box-shadow:none} .cta{-webkit-print-color-adjust:exact;print-color-adjust:exact} }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="top">
+    <div class="brand">Angel <span>Automates</span></div>
+    <div class="kick">Online Visibility Report</div>
+    <h1>{{BUSINESS_NAME}}</h1>
+    <div class="meta">{{CATEGORY}} · {{CITY}} · Prepared {{REPORT_DATE}}</div>
+  </div>
+
+  <div class="score-hero">
+    <div class="gauge"><b>{{OVERALL_SCORE}}</b><small>out of 100</small></div>
+    <div class="verdict">
+      <h2>{{OVERALL_HEADLINE}}</h2>
+      <p>{{OVERALL_SUMMARY}}</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="lbl">The scorecard</div>
+
+    <div class="row {{GBP_CLASS}}">
+      <div class="pill">{{GBP_SCORE}}</div>
+      <div class="body"><h3>Google Business Profile <span class="tag">{{GBP_TAG}}</span></h3>
+        <p>{{GBP_NOTE}}</p></div>
+    </div>
+
+    <div class="row {{WEB_CLASS}}">
+      <div class="pill">{{WEB_SCORE}}</div>
+      <div class="body"><h3>Website <span class="tag">{{WEB_TAG}}</span></h3>
+        <p>{{WEB_NOTE}}</p></div>
+    </div>
+
+    <div class="row {{MOBILE_CLASS}}">
+      <div class="pill">{{MOBILE_SCORE}}</div>
+      <div class="body"><h3>Mobile experience <span class="tag">{{MOBILE_TAG}}</span></h3>
+        <p>{{MOBILE_NOTE}}</p></div>
+    </div>
+
+    <div class="row {{REVIEWS_CLASS}}">
+      <div class="pill">{{REVIEWS_SCORE}}</div>
+      <div class="body"><h3>Reviews &amp; reputation <span class="tag">{{REVIEWS_TAG}}</span></h3>
+        <p>{{REVIEWS_NOTE}}</p></div>
+    </div>
+
+    <div class="row {{SEO_CLASS}}">
+      <div class="pill">{{SEO_SCORE}}</div>
+      <div class="body"><h3>Findability on search <span class="tag">{{SEO_TAG}}</span></h3>
+        <p>{{SEO_NOTE}}</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">What this is costing you</div>
+    <div class="cost">
+      <h3>{{COST_HEADLINE}}</h3>
+      <p>{{COST_BODY}}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="lbl">Your action plan</div>
+    <table>
+      <thead><tr><th>Priority</th><th>Fix</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td><span class="prio p1">1 · Now</span></td><td><b>{{FIX1_TITLE}}</b><br><span class="fix">{{FIX1_DESC}}</span></td><td class="price">{{FIX1_PRICE}}</td></tr>
+        <tr><td><span class="prio p2">2 · Soon</span></td><td><b>{{FIX2_TITLE}}</b><br><span class="fix">{{FIX2_DESC}}</span></td><td class="price">{{FIX2_PRICE}}</td></tr>
+        <tr><td><span class="prio p3">3 · Later</span></td><td><b>{{FIX3_TITLE}}</b><br><span class="fix">{{FIX3_DESC}}</span></td><td class="price">{{FIX3_PRICE}}</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="cta">
+    <h2>Want the #1 fix handled this week?</h2>
+    <p>{{CTA_PITCH}}</p>
+    <a class="btn" href="mailto:angenavarr77@gmail.com?subject=Visibility%20fix%20for%20{{BUSINESS_NAME_URL}}&body=Hi%20Angel%2C%20I%20saw%20my%20visibility%20report%20and%20want%20to%20get%20started.">Get started — angenavarr77@gmail.com</a>
+    <p class="fine">Free mockup first, no obligation. You only pay once you approve the work.</p>
+  </div>
+
+  <footer>
+    <span>© 2026 Angel Automates</span>
+    <span>This report uses public information and is provided free of charge.</span>
+  </footer>
+
+</div>
+</body>
+</html>
