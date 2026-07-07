@@ -9,6 +9,9 @@ Flat prices. No hourly billing, no monthly retainers. Half up front, half on app
 | **Starter Site** | $350 | 1-4 page mobile-friendly website: home, services/menu, about, contact. Free hosting. Live in under a week. | 1-2 evenings with Claude |
 | **Site Rebuild** | $350 | Their existing content, rebuilt modern + mobile-friendly. | 1-2 evenings |
 | **Rush (48hr)** | +$100 | Same, delivered in 2 days. | Same, just sooner |
+| **Visibility Report** | $129 | One-page written audit of their whole online presence — scorecard, what each gap costs, prioritized plan. Free with any site; credited toward work if they buy within 30 days. | ~15 min with Claude |
+
+The **Visibility Report** is also your best cold-outreach opener — a free 3-bullet "mini-audit" gets the reply, the full report (or a free mockup) closes. Full playbook in `audit-kit.md`.
 
 ## Upsells (offer AFTER they've said yes to a site)
 
