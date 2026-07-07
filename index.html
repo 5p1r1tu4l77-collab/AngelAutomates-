@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Automates — Websites for Local Businesses, $350 Flat</title>
+<meta name="description" content="Clean, mobile-friendly websites for local businesses. $350 flat, live in under a week, free hosting. No monthly fees.">
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#12151d; --panel2:#181c27; --line:#242a38;
+    --text:#e8ebf2; --muted:#9aa3b5; --accent:#6ea8fe; --accent2:#9d7bff;
+    --grad:linear-gradient(135deg,#6ea8fe,#9d7bff);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:var(--accent);text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:var(--text)}
+  .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;gap:28px;font-size:.95rem}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--text)}
+  .btn{display:inline-block;padding:12px 24px;border-radius:10px;font-weight:600;font-size:.95rem;transition:transform .15s ease,box-shadow .15s ease}
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(110,168,254,.35)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(110,168,254,.45)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent)}
+  .hero{padding:96px 0 72px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:720px;height:520px;background:radial-gradient(ellipse,rgba(110,168,254,.16),transparent 65%);pointer-events:none}
+  .badge{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.82rem;color:var(--muted);margin-bottom:22px}
+  .hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.12;max-width:820px;margin:0 auto 18px}
+  .hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--muted);font-size:1.12rem;max-width:600px;margin:0 auto 32px}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .stats{display:flex;gap:0;justify-content:center;margin-top:56px;border:1px solid var(--line);border-radius:14px;overflow:hidden;flex-wrap:wrap}
+  .stat{flex:1;min-width:160px;padding:22px 16px;background:var(--panel)}
+  .stat+.stat{border-left:1px solid var(--line)}
+  .stat b{display:block;font-size:1.5rem;letter-spacing:-.02em}
+  .stat span{color:var(--muted);font-size:.88rem}
+  section{padding:72px 0}
+  .kicker{color:var(--accent);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+  h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .sub{color:var(--muted);max-width:620px;margin-bottom:40px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;transition:border-color .15s ease,transform .15s ease}
+  .card:hover{border-color:#3a4358;transform:translateY(-3px)}
+  .card .ico{width:44px;height:44px;border-radius:11px;background:var(--panel2);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h3{font-size:1.1rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .demo-card{display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--panel);color:var(--text);transition:transform .15s ease,border-color .15s ease}
+  .demo-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .demo-thumb{height:170px;display:flex;align-items:flex-end;padding:20px;font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+  .thumb-restaurant{background:linear-gradient(140deg,#3d1f14,#8a4b2d 60%,#c98a4b);color:#ffe9d1}
+  .thumb-contractor{background:linear-gradient(140deg,#101820,#1f3a54 60%,#e8a33d);color:#fff}
+  .thumb-salon{background:linear-gradient(140deg,#2a1e2b,#7d4a6d 60%,#d9a7c7);color:#fff5fa}
+  .demo-body{padding:20px}
+  .demo-body p{color:var(--muted);font-size:.92rem;margin:6px 0 12px}
+  .demo-body .view{font-weight:600;font-size:.92rem;color:var(--accent)}
+  .price-box{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  .price-big{font-size:3.4rem;font-weight:800;letter-spacing:-.04em}
+  .price-big small{font-size:1.05rem;color:var(--muted);font-weight:500;letter-spacing:0}
+  .checklist{list-style:none}
+  .checklist li{padding:9px 0 9px 32px;position:relative;color:var(--muted)}
+  .checklist li::before{content:"";position:absolute;left:0;top:14px;width:18px;height:18px;border-radius:50%;background:var(--grad);opacity:.9;mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>') center/contain no-repeat;-webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>') center/contain no-repeat}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:step}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;counter-increment:step}
+  .step::before{content:counter(step,decimal-leading-zero);display:block;font-size:.85rem;font-weight:700;color:var(--accent);margin-bottom:12px;letter-spacing:.1em}
+  .step h3{font-size:1.05rem;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:.92rem}
+  .cta-final{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:64px 32px;position:relative;overflow:hidden}
+  .cta-final::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(157,123,255,.12),transparent 60%);pointer-events:none}
+  .cta-final h2{margin-bottom:10px}
+  .cta-final p{color:var(--muted);margin-bottom:28px}
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .price-box{grid-template-columns:1fr;padding:28px}
+    section{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Angel <span>Automates</span></a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Get a free mockup</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="badge">Websites for local businesses · No monthly fees</span>
+    <h1>Your business deserves a website that <em>actually brings in customers.</em></h1>
+    <p>Clean, mobile-friendly websites for restaurants, contractors, salons, and shops. $350 flat. Live in under a week. Hosting included, free, forever.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#contact">Get a free mockup — no obligation</a>
+      <a class="btn btn-ghost" href="#work">See my work</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>$350</b><span>flat — no surprises</span></div>
+      <div class="stat"><b>&lt; 7 days</b><span>from yes to live</span></div>
+      <div class="stat"><b>$0/mo</b><span>hosting included free</span></div>
+      <div class="stat"><b>100%</b><span>mobile-friendly</span></div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="kicker">Recent work</div>
+    <h2>See the style for yourself</h2>
+    <p class="sub">Every site is built custom for the business — these live demos show the level of polish you get. Tap through on your phone; they're built for it.</p>
+    <div class="grid3">
+      <a class="demo-card" href="demos/restaurant/">
+        <div class="demo-thumb thumb-restaurant">Casa Lumbre</div>
+        <div class="demo-body">
+          <strong>Restaurant</strong>
+          <p>Menu highlights, hours, location, and a design that makes people hungry before they arrive.</p>
+          <span class="view">View live demo →</span>
+        </div>
+      </a>
+      <a class="demo-card" href="demos/contractor/">
+        <div class="demo-thumb thumb-contractor">Ironwood Builders</div>
+        <div class="demo-body">
+          <strong>Contractor</strong>
+          <p>Services, trust signals, and a quote form — built to turn visitors into phone calls.</p>
+          <span class="view">View live demo →</span>
+        </div>
+      </a>
+      <a class="demo-card" href="demos/salon/">
+        <div class="demo-thumb thumb-salon">Velvet &amp; Vine</div>
+        <div class="demo-body">
+          <strong>Salon</strong>
+          <p>Service menu, stylist intros, and booking CTAs with a look as polished as the work.</p>
+          <span class="view">View live demo →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="kicker">Pricing</div>
+    <h2>One flat price. Zero monthly fees.</h2>
+    <div class="price-box">
+      <div>
+        <div class="price-big">$350 <small>flat</small></div>
+        <p style="color:var(--muted);margin-top:10px">Half up front, half when you approve the finished site. Don't love it? You don't pay the second half.</p>
+        <a class="btn btn-primary" style="margin-top:22px" href="#contact">Start with a free mockup</a>
+      </div>
+      <ul class="checklist">
+        <li>Up to 4 pages — home, services or menu, about, contact</li>
+        <li>Looks great on phones, tablets, and desktops</li>
+        <li>Free hosting, forever — you only pay for your domain (~$12/yr)</li>
+        <li>Live in under a week (48-hour rush available)</li>
+        <li>Add-ons: Google Business setup, quote forms, review tools</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="kicker">How it works</div>
+    <h2>From first message to live site in four steps</h2>
+    <div class="steps">
+      <div class="step"><h3>Free mockup</h3><p>Tell me about your business. Within a day, I send you a live link to a homepage built for you. Costs nothing.</p></div>
+      <div class="step"><h3>You say go</h3><p>Love it? 50% deposit and I build the rest — your photos, your words, your hours.</p></div>
+      <div class="step"><h3>You approve</h3><p>Review the finished site. We tweak until you're happy. Then the final 50%.</p></div>
+      <div class="step"><h3>You're live</h3><p>I connect your domain and hand over the keys. Optional care plan if you ever want edits done for you.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta-final">
+      <h2>Get your free mockup</h2>
+      <p>One message. One day. A live homepage for your business — before you spend a cent.</p>
+      <a class="btn btn-primary" href="sms:+15551234567?body=Hi!%20I'd%20like%20a%20free%20website%20mockup%20for%20my%20business.">Text me: (555) 123-4567</a>
+      <p style="margin-top:18px;font-size:.9rem">or email <a href="mailto:hello@angelautomates.example">hello@angelautomates.example</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <span>© 2026 Angel Automates</span>
+    <span>Websites &amp; automations for local businesses</span>
+  </div>
+</footer>
+
+</body>
+</html>
