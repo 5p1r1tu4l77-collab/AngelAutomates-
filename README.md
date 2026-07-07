@@ -1,17 +1,25 @@
-# navarro_mission_control
+# Angel Automates
 
-A new Flutter project.
+Portfolio and demo sites for Angel Automates — fast, affordable websites and automations for small businesses.
 
-## Getting Started
+**Live site:** https://5p1r1tu4l77-collab.github.io/AngelAutomates-/
 
-This project is a starting point for a Flutter application.
+## What's in this repo
 
-A few resources to get you started if this is your first Flutter project:
+- `index.html` — main portfolio / services landing page
+- `demos/restaurant/` — demo site: Casa Lumbre (restaurant)
+- `demos/contractor/` — demo site: Ironwood Builders (contractor)
+- `demos/salon/` — demo site: Velvet & Vine (salon)
+- `playbook/` — business playbook: Day-1 checklist, outreach kit, pricing sheet, lead tracker
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Plain static HTML/CSS — zero build step, zero hosting cost. Deploys directly to Vercel.
+
+## Local preview
+
+Open `index.html` in a browser, or run any static server:
+
+```
+python3 -m http.server 8000
+```

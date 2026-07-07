@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironwood Builders — Remodeling & General Contracting</title>
+<meta name="description" content="Ironwood Builders: licensed, insured remodeling and general contracting. Kitchens, baths, additions, decks. Free estimates.">
+<style>
+  :root{
+    --navy:#101820; --navy2:#182534; --steel:#1f3a54; --amber:#e8a33d; --amber-dk:#c9862a;
+    --bg:#f4f6f8; --white:#fff; --text:#1c2733; --muted:#5b6b7c; --line:#dde4ea;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{text-decoration:none;color:var(--steel)}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .topbar{background:var(--navy);color:#b9c6d2;font-size:.85rem;padding:8px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .topbar b{color:var(--amber)}
+  .topbar a{color:#fff;font-weight:600}
+  header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{font-weight:800;font-size:1.25rem;letter-spacing:-.01em;color:var(--navy);text-transform:uppercase}
+  .logo span{color:var(--amber)}
+  .nav-links{display:flex;gap:26px;font-size:.94rem;font-weight:600}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--navy)}
+  .btn{display:inline-block;padding:13px 26px;border-radius:6px;font-weight:700;font-size:.95rem;transition:background .15s ease,transform .15s ease}
+  .btn-amber{background:var(--amber);color:var(--navy)}
+  .btn-amber:hover{background:var(--amber-dk);transform:translateY(-1px)}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .hero{background:linear-gradient(rgba(16,24,32,.82),rgba(16,24,32,.86)),linear-gradient(140deg,#1f3a54,#101820 70%);color:#fff;padding:100px 0 90px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+  .hero .tag{display:inline-block;background:rgba(232,163,61,.15);color:var(--amber);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;padding:6px 14px;border-radius:4px;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.2rem,5.5vw,3.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px}
+  .hero p{color:#b9c6d2;font-size:1.1rem;margin-bottom:30px;max-width:520px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .quote-card{background:var(--white);border-radius:12px;padding:30px;color:var(--text);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .quote-card h3{font-size:1.15rem;margin-bottom:4px}
+  .quote-card .small{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+  .quote-card label{display:block;font-size:.82rem;font-weight:700;margin:12px 0 5px;color:var(--navy)}
+  .quote-card input,.quote-card select,.quote-card textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;font-size:.95rem;font-family:inherit;background:#fbfcfd}
+  .quote-card input:focus,.quote-card select:focus,.quote-card textarea:focus{outline:2px solid var(--amber);border-color:transparent}
+  .quote-card button{width:100%;margin-top:18px;padding:14px;border:none;border-radius:6px;background:var(--navy);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+  .quote-card button:hover{background:var(--steel)}
+  .trust{background:var(--white);border-bottom:1px solid var(--line);padding:22px 0}
+  .trust .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;text-align:center}
+  .trust-item{flex:1;min-width:150px;font-size:.9rem;color:var(--muted)}
+  .trust-item b{display:block;color:var(--navy);font-size:1.05rem}
+  section{padding:76px 0}
+  .kicker{color:var(--amber-dk);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
+  h2{font-size:clamp(1.7rem,3.8vw,2.3rem);font-weight:800;letter-spacing:-.02em;color:var(--navy);margin-bottom:12px}
+  .sub{color:var(--muted);max-width:600px;margin-bottom:42px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px;border-top:4px solid var(--amber)}
+  .svc h3{font-size:1.1rem;margin-bottom:8px;color:var(--navy)}
+  .svc p{color:var(--muted);font-size:.94rem}
+  .why{background:var(--navy);color:#fff}
+  .why h2{color:#fff}
+  .why .sub{color:#b9c6d2}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .why-item{background:var(--navy2);border-radius:10px;padding:26px;border-left:4px solid var(--amber)}
+  .why-item h3{font-size:1.02rem;margin-bottom:6px}
+  .why-item p{color:#b9c6d2;font-size:.92rem}
+  .review{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px}
+  .stars{color:var(--amber);letter-spacing:2px;margin-bottom:12px;font-size:1.05rem}
+  .review p{font-size:.97rem;color:var(--text);margin-bottom:14px}
+  .review b{font-size:.88rem;color:var(--muted);font-weight:600}
+  .cta-band{background:linear-gradient(90deg,var(--amber),#f0b95e);padding:56px 0;text-align:center}
+  .cta-band h2{color:var(--navy);margin-bottom:8px}
+  .cta-band p{color:#4a3a1a;margin-bottom:24px;font-weight:500}
+  footer{background:var(--navy);color:#8fa2b4;padding:36px 0;font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--amber)}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Licensed &amp; Insured · ROC #000000 <b>· Free Estimates</b></span>
+    <a href="tel:+15555550142">☎ (555) 555-0142</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Ironwood<span>Builders</span></a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#quote">Contact</a>
+    </nav>
+    <a class="btn btn-amber" href="#quote">Free Estimate</a>
+  </div>
+</header>
+
+<div class="hero" id="quote">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Remodeling &amp; General Contracting</span>
+      <h1>Built right.<br>Built to last.</h1>
+      <p>Kitchens, bathrooms, additions, and decks — delivered on time, on budget, and cleaned up like we were never there. 18 years serving homeowners who expect it done right the first time.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-amber" href="tel:+15555550142">Call (555) 555-0142</a>
+        <a class="btn btn-outline" href="#services">Our services</a>
+      </div>
+    </div>
+    <form class="quote-card" onsubmit="event.preventDefault();this.innerHTML='<h3>Thanks! We\'ll call you within one business day.</h3>'">
+      <h3>Get your free estimate</h3>
+      <div class="small">No pressure, no obligation — just a straight answer and a fair number.</div>
+      <label for="q-name">Name</label>
+      <input id="q-name" type="text" placeholder="Jane Smith" required>
+      <label for="q-phone">Phone</label>
+      <input id="q-phone" type="tel" placeholder="(555) 555-0000" required>
+      <label for="q-type">Project type</label>
+      <select id="q-type">
+        <option>Kitchen remodel</option>
+        <option>Bathroom remodel</option>
+        <option>Home addition</option>
+        <option>Deck / patio</option>
+        <option>Other</option>
+      </select>
+      <label for="q-notes">Tell us a little about it</label>
+      <textarea id="q-notes" rows="3" placeholder="We're thinking about opening up the kitchen wall..."></textarea>
+      <button type="submit">Request my estimate</button>
+    </form>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><b>18+ years</b>in business</div>
+    <div class="trust-item"><b>400+</b>projects completed</div>
+    <div class="trust-item"><b>4.9 ★</b>Google rating</div>
+    <div class="trust-item"><b>Licensed</b>bonded &amp; insured</div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <h2>What we build</h2>
+    <p class="sub">One crew, start to finish. No mystery subcontractors, no disappearing acts.</p>
+    <div class="grid3">
+      <div class="svc"><h3>Kitchen Remodels</h3><p>From cabinet refacing to full gut renovations — the room your home revolves around, done properly.</p></div>
+      <div class="svc"><h3>Bathroom Remodels</h3><p>Tile, vanities, walk-in showers, full re-plumbs. Waterproofed like it matters, because it does.</p></div>
+      <div class="svc"><h3>Home Additions</h3><p>More house without moving. Permitted, engineered, and matched to the home you already love.</p></div>
+      <div class="svc"><h3>Decks &amp; Patios</h3><p>Outdoor spaces built for two decades of barbecues, not two summers.</p></div>
+      <div class="svc"><h3>Garage Conversions</h3><p>Home office, gym, or guest suite — turn square footage you have into space you use.</p></div>
+      <div class="svc"><h3>Repairs &amp; Punch Lists</h3><p>That list on your fridge? Hand it to us. One visit, all of it done.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--amber)">Why Ironwood</div>
+    <h2>The contractor your neighbors warned you... to hire</h2>
+    <p class="sub">Everyone's got a contractor horror story. Nobody's got one about us.</p>
+    <div class="why-grid">
+      <div class="why-item"><h3>Fixed-price quotes</h3><p>The number we quote is the number you pay. Changes only happen when you request them — in writing.</p></div>
+      <div class="why-item"><h3>We show up</h3><p>Scheduled start dates we actually hit, and a text the night before, every time.</p></div>
+      <div class="why-item"><h3>Clean sites</h3><p>Tools packed, floors swept, dumpster hauled. Your home isn't a job site after 5pm.</p></div>
+      <div class="why-item"><h3>Real warranty</h3><p>Two years on labor, in writing. If something's not right, we come back and make it right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="kicker">Reviews</div>
+    <h2>What homeowners say</h2>
+    <p class="sub">Straight from our Google reviews.</p>
+    <div class="grid3">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"They quoted 6 weeks for our kitchen and finished in 5. Same price as the quote, to the dollar. I didn't know contractors like this existed."</p>
+        <b>— Maria G., kitchen remodel</b>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Third company we called, first one that showed up on time. The deck is stunning and they left the yard cleaner than they found it."</p>
+        <b>— Dan &amp; Priya K., deck build</b>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Our addition needed permits, engineering, the works. Ironwood handled every bit of it. Zero stress. Worth every penny."</p>
+        <b>— Robert T., home addition</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <h2>Ready to get that project off the fridge list?</h2>
+    <p>Free estimates. Straight answers. A number that doesn't move.</p>
+    <a class="btn" style="background:var(--navy);color:#fff" href="tel:+15555550142">Call (555) 555-0142</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ironwood Builders · Licensed, Bonded &amp; Insured</span>
+    <span>Demo site by <a href="../../">Angel Automates</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
