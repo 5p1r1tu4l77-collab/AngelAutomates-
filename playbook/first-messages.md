@@ -8,7 +8,9 @@ For phone-only businesses, text the business number if it accepts SMS; otherwise
 
 ## 1. After Hours Auto Repair — ⭐ START HERE (text or call)
 
-> Hi! I was looking up mechanics in Cicero and found After Hours Auto Repair — 127 reviews at 5 stars is unreal, hardly any shop has that. But you've got no website, so anyone who doesn't already know you can't see those reviews, your hours, or what you work on. I build simple mobile-friendly websites for local businesses: $350 flat, live in a week, no monthly fees. Here's my work: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/contractor/ — want me to build a free mockup homepage for After Hours? Takes me a day, costs nothing.
+Their mockup is ALREADY BUILT and live — this message leads with it:
+
+> Hi! I was looking up mechanics in Cicero and found After Hours Auto Repair — 127 reviews at 5 stars is unreal, hardly any shop has that. But you've got no website, so anyone who doesn't already know you can't see those reviews or what you work on. I build websites for local businesses ($350 flat, no monthly fees), and honestly your shop deserves one so much that I already built you a free sample: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/after-hours-auto-repair/ — open it on your phone. If you like it, I'll finish it complete with your phone number, hours, and photos. If not, no hard feelings. Either way, keep being the best-rated shop in Cicero.
 
 ## 2. Taqueria Casa Grande (Instagram DM to @taqueriacasagrande)
 
