@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cielito Lindo Bakery — Custom Cakes & Mexican Sweets in Cicero</title>
+<meta name="description" content="Cielito Lindo Bakery in Cicero, IL — custom cakes, pan dulce, and Mexican pastries baked fresh daily. Order ahead for any celebration.">
+<style>
+  :root{
+    --brand:#c2551f; --brand-dk:#9a3f12; --tint:#faf3e7; --ink:#2b1a12;
+    --paper:#ffffff; --muted:#7a6a5f; --line:#ece2d5;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--brand-dk);text-decoration:none}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .logo{font-weight:800;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink)}
+  .logo span{color:var(--brand)}
+  .nav-links{display:flex;gap:26px;font-size:.93rem;font-weight:600}
+  .nav-links a{color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;padding:13px 26px;border-radius:8px;font-weight:700;font-size:.95rem;transition:background .15s ease,transform .15s ease}
+  .btn-brand{background:var(--brand);color:#fff}
+  .btn-brand:hover{background:var(--brand-dk);transform:translateY(-1px)}
+  .btn-line{border:2px solid var(--ink);color:var(--ink)}
+  .btn-line:hover{border-color:var(--brand);color:var(--brand)}
+  .hero{background:linear-gradient(180deg,var(--tint),var(--paper) 90%);text-align:center;padding:96px 24px 80px}
+  .hero .tag{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:.82rem;color:var(--muted);margin-bottom:22px}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--brand)}
+  .hero p{color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 auto 32px}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .strip{background:var(--ink);color:#fff;text-align:center;padding:12px;font-size:.92rem}
+  .strip b{color:var(--brand);filter:brightness(1.6)}
+  section{padding:72px 0}
+  .kicker{color:var(--brand);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;margin-bottom:10px;text-align:center}
+  h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;letter-spacing:-.02em;text-align:center;margin-bottom:12px}
+  .sub{color:var(--muted);text-align:center;max-width:560px;margin:0 auto 44px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px;border-top:4px solid var(--brand)}
+  .card h3{font-size:1.08rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.94rem}
+  .band{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .review{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .stars{color:var(--brand);letter-spacing:2px;margin-bottom:12px}
+  .review p{font-size:.96rem;margin-bottom:14px}
+  .review b{font-size:.87rem;color:var(--muted);font-weight:600}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px;margin:0 auto}
+  .info-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:32px;text-align:center}
+  .info-card h3{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--brand);margin-bottom:16px}
+  .info-card table{width:100%;font-size:.94rem;border-collapse:collapse}
+  .info-card td{padding:4px 0}
+  .info-card td:last-child{text-align:right;color:var(--muted)}
+  .cta-final{background:linear-gradient(135deg,var(--brand),var(--brand-dk));color:#fff;text-align:center;border-radius:22px;padding:60px 32px;margin:0 0 72px}
+  .cta-final h2{color:#fff}
+  .cta-final p{color:rgba(255,255,255,.85);margin-bottom:26px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.87rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:720px){
+    .nav-links{display:none}
+    .visit-grid{grid-template-columns:1fr}
+    section{padding:52px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Cielito<span>Lindo</span></a>
+    <nav class="nav-links">
+      <a href="#services">Bakery</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-brand" href="#visit">Order a Cake</a>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="tag">Cicero, IL · Bakery</span>
+  <h1>Custom cakes &<br><em>fresh Mexican sweets.</em></h1>
+  <p>Handmade cakes for every celebration, plus pan dulce and pastries baked fresh in Cicero every single day.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-brand" href="#visit">Order a Cake</a>
+    <a class="btn btn-line" href="#services">See the Bakery</a>
+  </div>
+</div>
+
+<div class="strip"><b>Custom cakes &amp; Mexican bakery in Cicero</b> · Baked fresh every day</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Bakery</div>
+    <h2>What we bake</h2>
+    <p class="sub">From a Tuesday pan dulce run to the centerpiece of your party.</p>
+    <div class="grid3">
+      <div class="card"><h3>Custom Cakes</h3><p>Birthdays, quinceañeras, weddings — designed to order and made to taste as good as they look.</p></div>
+      <div class="card"><h3>Pan Dulce & Pastries</h3><p>Conchas, orejas, and the fresh-baked Mexican sweets that sell out for a reason.</p></div>
+      <div class="card"><h3>Party & Event Orders</h3><p>Trays and dessert tables for showers, parties, and celebrations of every size.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="why">
+  <div class="wrap">
+    <div class="kicker">Why Cielito Lindo</div>
+    <h2>Baked with love.</h2>
+    <p class="sub">The kind of bakery where the cake actually tastes as good as it looks.</p>
+    <div class="grid3">
+      <div class="card"><h3>Made from scratch</h3><p>Fresh every day — not thawed, not shipped in. You can taste the difference in every bite.</p></div>
+      <div class="card"><h3>For every celebration</h3><p>From a small birthday to a big quinceañera, we make the cake that makes the day.</p></div>
+      <div class="card"><h3>Order your way</h3><p>Tell us your design, flavor, and date — we handle the rest and have it ready on time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="kicker">Reviews</div>
+    <h2>What customers say</h2>
+    <p class="sub">Straight from our customers.</p>
+    <div class="grid3">
+      <div class="review"><div class="stars">★★★★★</div><p>"The cake was gorgeous AND delicious — everyone at the party asked where it was from."</p><b>— Customer review</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Best pan dulce in Cicero. Fresh every morning and always worth the stop."</p><b>— Customer review</b></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"They nailed my daughter's quinceañera cake exactly how I pictured it. Highly recommend."</p><b>— Customer review</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="kicker">Visit</div>
+    <h2>Stop in or order ahead</h2>
+    <p class="sub">Custom cakes need a little lead time — message us on Facebook to place your order.</p>
+    <div class="visit-grid">
+      <div class="info-card">
+        <h3>Hours</h3>
+        <p style="font-size:.94rem;color:var(--muted)">Open daily.<br>Check our Facebook or Google listing for today's hours.</p>
+      </div>
+      <div class="info-card">
+        <h3>Find Us</h3>
+        <p style="font-size:.94rem">Cicero, IL<br><br>Facebook: Cielito Lindo Bakery<br>Find us on Google Maps</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta-final">
+    <h2>Got a celebration coming up?</h2>
+    <p>Let Cielito Lindo bake the cake everyone remembers.</p>
+    <a class="btn" style="background:#fff;color:var(--brand-dk)" href="#visit">Order a Cake</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cielito Lindo Bakery · Cicero, IL</span>
+    <span>Website mockup by <a href="https://5p1r1tu4l77-collab.github.io/AngelAutomates-/">Angel Automates</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
