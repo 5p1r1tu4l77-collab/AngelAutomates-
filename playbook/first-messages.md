@@ -12,25 +12,33 @@ Their mockup is ALREADY BUILT and live — this message leads with it:
 
 > Hi! I was looking up mechanics in Cicero and found After Hours Auto Repair — 127 reviews at 5 stars is unreal, hardly any shop has that. But you've got no website, so anyone who doesn't already know you can't see those reviews or what you work on. I build websites for local businesses ($350 flat, no monthly fees), and honestly your shop deserves one so much that I already built you a free sample: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/after-hours-auto-repair/ — open it on your phone. If you like it, I'll finish it complete with your phone number, hours, and photos. If not, no hard feelings. Either way, keep being the best-rated shop in Cicero.
 
-## 2. Taqueria Casa Grande (Instagram DM to @taqueriacasagrande)
+## 2. Taqueria Casa Grande (Instagram DM to @taqueriacasagrande) — ✅ MOCKUP BUILT
 
-> Hola! Found Casa Grande on Instagram — the food looks incredible. Noticed you don't have a website though, so anyone who hears about you can't find your menu or hours without digging through posts. I build simple mobile-friendly websites for local restaurants: $350 flat, free hosting, live in a week. Here's one I did: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/restaurant/ — want a free mockup of what Casa Grande's could look like? No obligation.
+Their sample homepage is ALREADY LIVE — this message leads with it:
 
-## 3. Cielito Lindo Bakery (Facebook message)
+> Hola! Found Casa Grande on Instagram — the food looks incredible. You don't have a website though, so anyone who hears about you can't find your menu or hours without digging through posts. Your food deserves better, so I already built you a free sample homepage: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/taqueria-casa-grande/ — open it on your phone. If you like it, I'll finish it complete with your real photos, menu, and hours: $350 flat, free hosting, live in a week. No obligation either way.
 
-> Hi! Found Cielito Lindo on Facebook — your cakes look amazing. But when people search "custom cakes Cicero" on Google, businesses with real websites show up first, and a Facebook page can't compete there. I build simple websites for local bakeries: $350 flat, live in a week, no monthly fees. My work: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/restaurant/ — want me to make a free mockup homepage for Cielito Lindo? Costs you nothing to look.
+## 3. Cielito Lindo Bakery (Facebook message) — ✅ MOCKUP BUILT
 
-## 4. Michelle's Auto Repair & Body Shop (text or call)
+Their sample homepage is ALREADY LIVE — this message leads with it:
 
-> Hi! Came across Michelle's Auto Repair while looking up body shops in Cicero — your service reviews are great. But you've got no website, so new customers can't see your work or get a quote without calling around. I build clean mobile-friendly sites for auto shops: $350 flat, live in a week. Example: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/contractor/ — want a free mockup for Michelle's? Zero obligation.
+> Hi! Found Cielito Lindo on Facebook — your cakes look amazing. But when people search "custom cakes Cicero" on Google, businesses with real websites show up first, and a Facebook page can't compete there. Your cakes deserve better, so I already built you a free sample homepage: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/cielito-lindo-bakery/ — open it on your phone. If you like it, I'll finish it complete with your real cake photos and info: $350 flat, live in a week, no monthly fees. Costs you nothing to look.
+
+## 4. Michelle's Auto Repair & Body Shop (text or call) — ✅ MOCKUP BUILT
+
+Their sample homepage is ALREADY LIVE — this message leads with it:
+
+> Hi! Came across Michelle's Auto Repair while looking up body shops in Cicero — your service reviews are great. But you've got no website, so new customers can't see your work or get a quote without calling around. I already built you a free sample homepage: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/michelles-auto-repair/ — open it on your phone. If you like it, I'll finish it complete with your real photos, phone, and hours: $350 flat, live in a week. Zero obligation either way.
 
 ## 5. Taqueria Aguascalientes (text or call)
 
 > Hi! Taqueria Aguascalientes has been a Cicero institution for 40+ years — but your only web presence is an auto-generated menu page that doesn't tell your story, show your hours right, or come up properly on Google. A real website for a place with your history is an easy win. I build them for $350 flat: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/restaurant/ — want a free mockup of what yours could look like?
 
-## 6. Taqueria Los Altos De Jalisco (text or call)
+## 6. Taqueria Los Altos De Jalisco (text or call) — ✅ MOCKUP BUILT
 
-> Hi! I looked up Los Altos De Jalisco after hearing about the carne asada — but the only thing that comes up is a generic auto-generated menu page, not a real website for your restaurant. That's costing you customers who want to see the place, the menu, and your hours before driving over. I build real mobile-friendly restaurant sites for $350 flat: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/demos/restaurant/ — free mockup for Los Altos? Takes me a day.
+Their sample homepage is ALREADY LIVE — this message leads with it:
+
+> Hi! I looked up Los Altos De Jalisco after hearing about the carne asada — but the only thing that comes up is a generic auto-generated menu page, not a real website for your restaurant. That's costing you customers who want to see the place, the menu, and your hours before driving over. So I already built you a free sample homepage: https://5p1r1tu4l77-collab.github.io/AngelAutomates-/mockups/taqueria-los-altos-de-jalisco/ — open it on your phone. If you like it, I'll finish it complete with your real photos and info: $350 flat, live in a week. No obligation.
 
 ## 7. El Taco De Jalisco (text or call)
 
