@@ -11,6 +11,7 @@ Portfolio and demo sites for Angel Automates — fast, affordable websites and a
 - `demos/contractor/` — demo site: Ironwood Builders (contractor)
 - `demos/salon/` — demo site: Velvet & Vine (salon)
 - `playbook/` — business playbook: Day-1 checklist, outreach kit, pricing sheet, lead tracker
+- `ai-drama/` — AI micro-drama kit: series bible, 30-episode outline, 5 produced scripts, and a Claude-powered episode generator
 
 ## Stack
 
