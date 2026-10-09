@@ -8,6 +8,7 @@ A complete, ready-to-produce AI micro-drama: 30 episodes × 60–90 sec, vertica
 | `season-1-outline.md` | All 30 episodes, each with its cliffhanger, plus the paywall plan |
 | `episodes/ep01–05.md` | Fully produced scripts: shot-by-shot AI prompts, dialogue, SFX, captions, hashtags |
 | `generate.py` | Writes episodes 6–30, and the Spanish version, with Claude |
+| `fruit-dynasty/` | **Second show:** *Rotten to the Core*, an all-male AI fruit crime-family drama (20 eps, scripts for 1–3). Generate the rest with `python generate.py 4-20 --show fruit-dynasty` |
 
 ---
 

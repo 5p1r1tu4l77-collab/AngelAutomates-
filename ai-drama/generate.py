@@ -14,13 +14,16 @@ Usage:
     python generate.py 1-30 --lang es  # Spanish version of the whole season
     python generate.py 7 --force       # regenerate one episode
     python generate.py 6 --dry-run     # print the prompt, no API call
+
+    python generate.py 4-20 --show fruit-dynasty   # a different show's folder
 """
 
 import argparse
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+HERE = Path(__file__).resolve().parent
+ROOT = HERE  # the show folder; set from --show in main()
 MODEL = "claude-opus-5-5"
 
 SYSTEM_INSTRUCTIONS = """You are the head writer and AI-video director of a vertical micro-drama series.
@@ -120,10 +123,17 @@ def generate(client, ep: int, lang: str) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("episodes", help="episode number or range, e.g. 6 or 6-30")
+    parser.add_argument("--show", default=".", help="show folder (default: this folder), e.g. fruit-dynasty")
     parser.add_argument("--lang", choices=["en", "es"], default="en")
     parser.add_argument("--force", action="store_true", help="overwrite episodes that already exist")
     parser.add_argument("--dry-run", action="store_true", help="print the prompt for the first episode and exit")
     args = parser.parse_args()
+
+    global ROOT
+    ROOT = (HERE / args.show).resolve()
+    if not (ROOT / "series-bible.md").exists():
+        print(f"No series-bible.md in {ROOT}", file=sys.stderr)
+        return 1
 
     episodes = parse_range(args.episodes)
     if args.dry_run:
