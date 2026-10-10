@@ -26,12 +26,12 @@ Paste the **Locked look** verbatim wherever the tag appears. Generate one master
 
 ### [DON COCO] — Don Coco, the patriarch (dies in ep 1, flashbacks after)
 - **Who:** Built the Coco family produce empire from one market stall. Fair but ruthless.
-- **Locked look:** *photorealistic coconut head with a gray coconut-fiber beard and wise dark eyes, elderly man's body, black three-piece suit, gold pocket watch, wooden cane*
+- **Locked look:** *photorealistic whole brown hairy coconut shell as the head with rough fibrous husk texture, bushy gray coconut-fiber eyebrows and long gray coconut-fiber beard, wise dark eyes, elderly man's body, black three-piece suit, gold pocket watch, wooden cane*
 - **Voice:** Deep, slow, raspy. Signature line: **"Fruit that forgets its roots… rots."**
 
 ### [MANGO] — Mango Coco, 30s · eldest son, the golden heir
 - **Who:** Charming, the public face of the family, everyone's favorite. Secretly made a deal with the rival family.
-- **Locked look:** *photorealistic ripe golden-orange mango head with a small green leaf on top, confident smirk, athletic man's body, cream linen suit with open collar, gold chain*
+- **Locked look:** *photorealistic ripe golden-orange mango as the head with a small green leaf on top, confident smirk, athletic man's body, cream linen suit over an open-collar white shirt, gold chain*
 - **Voice:** Smooth and charming, until he's cornered.
 
 ### [LIMÓN] — Limón Coco, late 20s · middle son, the bitter one

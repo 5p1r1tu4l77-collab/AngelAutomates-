@@ -47,8 +47,8 @@ STYLE_LINE = (
 
 # Locked looks copied verbatim from series-bible.md
 CHARACTERS = {
-    "don-coco": "photorealistic coconut head with a gray coconut-fiber beard and wise dark eyes, elderly man's body, black three-piece suit, gold pocket watch, wooden cane",
-    "mango": "photorealistic ripe golden-orange mango head with a small green leaf on top, confident smirk, athletic man's body, cream linen suit with open collar, gold chain",
+    "don-coco": "photorealistic whole brown hairy coconut shell as the head with rough fibrous husk texture, bushy gray coconut-fiber eyebrows and long gray coconut-fiber beard, wise dark eyes, elderly man's body, black three-piece suit, gold pocket watch, wooden cane",
+    "mango": "photorealistic ripe golden-orange mango as the head with a small green leaf on top, confident smirk, athletic man's body, cream linen suit over an open-collar white shirt, gold chain",
     "limon": "photorealistic bright yellow lemon head with sharp intense eyes and a permanent frown, lean man's body, black turtleneck, gray wool overcoat, wire glasses",
     "kiwi": "photorealistic fuzzy brown kiwi fruit head, sliced open on top to show bright green flesh like hair, big innocent eyes, skinny young man's body, oversized green hoodie, headphones around neck",
     "platano": "photorealistic slightly spotted yellow banana head, tall and curved, stoic heavy-lidded eyes, broad muscular man's body, black chauffeur suit, black leather gloves, dark sunglasses",
@@ -62,12 +62,18 @@ WIDTH = 768
 HEIGHT = 1344
 
 
+FACE = "with a clearly visible human face on the fruit skin: two expressive human eyes, eyebrows, nose and mouth"
+
+
 def build_prompt(character: str) -> str:
-    locked = CHARACTERS[character]
     # Visual rules from bible: fruit head must have expressive human eyes,
-    # eyebrows and mouth. Enforce this so FLUX doesn't return a blank fruit.
-    face = "with expressive human eyes, eyebrows and mouth on the fruit"
-    return f"{locked} {face}, cinematic portrait, {STYLE_LINE}"
+    # eyebrows and mouth. FLUX weighs early words most, so the face goes
+    # right after the head description instead of at the end, otherwise
+    # it returns a blank fruit (see mango 01-03).
+    parts = CHARACTERS[character].split(", ")
+    head = next(i for i, part in enumerate(parts) if "head" in part)
+    parts.insert(head + 1, FACE)
+    return f"{', '.join(parts)}, cinematic portrait, {STYLE_LINE}"
 
 
 def next_index(out_dir: Path) -> int:
