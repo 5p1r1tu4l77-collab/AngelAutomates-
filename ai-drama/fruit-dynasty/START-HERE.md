@@ -7,6 +7,7 @@ Everything is written: all 20 episodes, a trailer, the Spanish versions of the f
 - `episodes/`: English scripts, `ep01`–`ep20` + `trailer`.
 - `episodes-es/`: Spanish scripts, `ep01`–`ep08` + `trailer`.
 - `series-bible.md`: what every character looks like (use these if an image comes out wrong).
+- `RESEARCH.md`: what we checked about platform rules and payouts, with sources.
 
 ---
 
@@ -32,20 +33,27 @@ Everything is written: all 20 episodes, a trailer, the Spanish versions of the f
 
 - **English handle ideas:** `@rottentothecore.ai` · `@rottenfruitdrama` · `@fruitmafia.ai`
 - **Spanish handle ideas:** `@elpatrondelhuerto` · `@telenoveladefrutas`
-- Use the same handle on **TikTok, YouTube Shorts, Instagram and Facebook**. Facebook Reels audiences love serialized drama, so don't skip it.
+- Use the same handle on **TikTok, YouTube Shorts, Instagram and Facebook**.
+- **Facebook: make a Page, not just a profile.** Then go to Professional Dashboard → Monetization and request access right away (it can be invite-only). Research says Facebook is likely your best payout platform, so don't skip it.
+- **Turn on the AI-generated label on every post, on every platform.** It's required, and skipping it is the quickest way to lose monetization.
 - **Profile picture:** crop Limón's MASTER to just his face (square).
 - **Bio (English):** `🍋 The most dangerous fruit family in the market. 🥥 AI drama · new part daily · Part 1 below 👇`
 - **Bio (Spanish):** `🍋 La familia de frutas más peligrosa del mercado. 🥥 Drama con IA · nueva parte diaria · Parte 1 abajo 👇`
 
 ## Part 3 — Get paid
 
-1. **Platform payouts:** apply as soon as you qualify. TikTok Creator Rewards (about 10k followers, 100k views in 30 days, videos over 1 minute), YouTube Partner Program, Facebook monetization.
-2. **The paywall (Episodes 9–20):**
+Research (see `RESEARCH.md`) changed the order of where the money comes from:
+
+1. **Facebook Reels:** AI content can be monetized when it's original. Request access on day 1 (see Part 2).
+2. **YouTube Shorts:** YouTube says AI storytelling channels can be monetized. Apply for the Partner Program as soon as you qualify.
+3. **Your paywall** (below): you keep about $4.30 of every $4.99 sale after Ko-fi's 5% fee and card fees.
+4. **TikTok Creator Rewards:** treat as a bonus, not the plan. Rules on fully AI-made videos are unclear right now. TikTok is still your **#1 place to grow an audience**, because that's where fruit dramas go viral. Apply once you have about 10k followers and 100k views a month, keep episodes over 1 minute, and remember that only views watched for 5+ seconds count.
+**Setting up the paywall (Episodes 9–20):**
    - Make a **Ko-fi** page (free). Add a shop item: **"Rotten to the Core: Full Season (Parts 9–20)", $4.99**.
    - Upload Episodes 9–20 to YouTube as **Unlisted** (not Private) in one playlist. The buyer's delivery message is that playlist link.
    - Put the Ko-fi link in the link in bio on every account.
    - Spanish item: **"El Patrón del Huerto: Temporada completa", $4.99**.
-3. **Later:** once you have numbers, pitch the finished season to micro-drama apps and sell your workflow as a kit (see the main `ai-drama/README.md`).
+5. **Later:** once you have numbers, pitch the finished season to micro-drama apps and sell your workflow as a kit (see the main `ai-drama/README.md`).
 
 ## Part 4 — Posting calendar (launch week + week 2)
 
@@ -64,7 +72,11 @@ Post English at **12pm and 7pm** your time. Post Spanish at the same times on th
 | 8 | Character spotlight: Plátano (best shots + "Drop a 🕶️") | Ep 8 + paywall |
 | 9 | Poll post: "Who's the real villain? Mango or Don Piña?" | Recap |
 | 10 | Behind the scenes: "How I made a lemon cry" (screen recording of your CapCut process). These posts grow fast. | Character spotlight |
-| 11–14 | One more recap or spotlight a day, plus **Ep 1 re-cut with a new hook text** to reach new viewers | Same |
+| 11–14 | One more recap or spotlight a day. **TikTok only:** an Ep 1 re-cut with a new hook text to reach new viewers | Same |
+
+**YouTube rule:** post each episode **once** and never re-upload re-cuts there. YouTube stops paying channels that look repetitive or template-made. Recaps and spotlights are fine on YouTube as long as each is a genuinely new edit.
+
+**Prove a person makes this show:** post a behind-the-scenes video at least once a week (your CapCut screen, the script, picking voices). It grows well, and it's your evidence of "original creative input" if a platform ever questions the account.
 
 After week 2: post 1 clip a day. When an episode clearly breaks out, start **Season 2** planning.
 
