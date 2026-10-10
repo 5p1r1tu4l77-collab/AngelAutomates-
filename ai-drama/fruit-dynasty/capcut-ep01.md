@@ -43,6 +43,20 @@ Each prompt puts the face right after the head (that's what fixed the blank-face
 **Plátano**
 > photorealistic slightly spotted yellow banana as the head, tall and curved, with a clearly visible human face on the banana peel: stoic heavy-lidded human eyes, eyebrows, nose and a firm mouth, broad muscular man's body, black chauffeur suit, black leather gloves, dark sunglasses pushed up on the head, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
 
+**The rest of the cast** (not in Ep 1, but needed from Ep 4 on, so make them the same day while your style is dialed in):
+
+**Uva Brothers** (Ep 4, 6)
+> two identical men, each with a photorealistic cluster of plump purple grapes as the head, with a clearly visible human face on the grape cluster: two smug human eyes, eyebrows, nose and mouth, matching black tracksuits, gold chains, standing side by side, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
+
+**Don Piña** (Ep 5)
+> photorealistic pineapple as the head with a tall spiky green crown and a golden scarred rind, with a clearly visible human face on the pineapple: two menacing human eyes, thick eyebrows, nose and a grinning mouth, heavyset man's body, white suit with a red silk shirt, many gold rings, holding a cigar, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
+
+**El Jalapeño** (Ep 5, 7, 8)
+> photorealistic glossy dark green jalapeño pepper as the head, with a clearly visible human face on the pepper skin: narrow glowing red human eyes, sharp eyebrows, nose and a thin mouth, lean man's body, long black leather coat, black gloves, standing in shadows with faint steam rising, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
+
+**Aguacate** (Ep 7, 8)
+> photorealistic dark green bumpy avocado as the head, with a clearly visible human face on the avocado skin: nervous human eyes behind round gold glasses, eyebrows, nose and mouth, older man's body, brown tweed suit, bow tie, holding a leather briefcase, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
+
 **Check every image:** fruit texture looks real, two eyes plus a mouth, human hands, right outfit. If one is off, regenerate rather than settling, because these images are your actors for all 20 episodes.
 
 ## Step 3 — Pick each character's voice (10 min)
