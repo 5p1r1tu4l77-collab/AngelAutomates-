@@ -108,25 +108,38 @@ def get_client(space: str, token: str | None):
 
 
 def generate_one(client, prompt: str, max_retries: int = 6):
-    """Call /infer with retries. Returns (result_dict, seed)."""
+    """Call /infer with retries. Returns (result_dict, seed).
+
+    Some Spaces (e.g. FLUX.1-schnell) have no guidance_scale param and use
+    fewer steps — verified via view_api, not guessed. If the Space rejects
+    guidance_scale, retry without it.
+    """
     last_err = None
+    no_guidance = False
     for attempt in range(1, max_retries + 1):
         try:
-            result, seed = client.predict(
+            kwargs: dict = dict(
                 prompt=prompt,
                 seed=0,
                 randomize_seed=True,
                 width=WIDTH,
                 height=HEIGHT,
-                guidance_scale=4.5,
-                num_inference_steps=28,
+                num_inference_steps=4 if no_guidance else 28,
                 api_name="/infer",
             )
+            if not no_guidance:
+                kwargs["guidance_scale"] = 4.5
+            result, seed = client.predict(**kwargs)
             return result, seed
         except Exception as e:  # noqa: BLE001
             last_err = e
             msg = str(e)
             print(f"  Attempt {attempt}/{max_retries} failed: {msg[:300]}")
+            if "not a valid key-word argument" in msg and "guidance_scale" in msg:
+                no_guidance = True
+                print("  Space has no guidance_scale (schnell-style) — retrying without it...")
+                time.sleep(2)
+                continue
             if is_quota_error(msg) and attempt < max_retries:
                 wait = 60 * attempt  # 60s, 120s, 180s...
                 print(f"  Free GPU busy or quota hit. Waiting {wait}s before retry...")
