@@ -105,6 +105,12 @@ Add this to the end of **every** scene prompt:
 - **Never show fruit being cut or smashed on camera.** The crack in shot 7 and the juice tear are the limit, to keep it PG-13 and monetizable.
 - Save every clip as `ep01-shot01.mp4`, `ep01-shot02.mp4`…
 
+**⚡ Faster: Multiframes (try this once you've made Ep 1 the slow way)**
+Dreamina, CapCut's AI site (dreamina.capcut.com, which may be included with your CapCut plan), has a **Multiframes** tool. Upload **up to 10 stills** and it animates them as consecutive scenes in one go.
+- Make shots 1–6 as stills, load them into Multiframes in order, and paste the motion notes. Then do shots 7–12. That's two runs per episode instead of twelve.
+- Use **Seedance Fast** for quick drafts and the higher-quality model for the final version, always at **9:16**.
+- Add voices, lip sync, captions and sound in the CapCut editor afterward, the same as Step 5.
+
 ## Step 5 — Edit (30–45 min)
 
 1. **New project, 9:16.** Drop shots 1–12 in order.

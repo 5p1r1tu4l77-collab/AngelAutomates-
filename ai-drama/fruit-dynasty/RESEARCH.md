@@ -38,6 +38,13 @@ Fact-checks behind the launch plan. Most sources are creator-industry blogs, not
 - TikTok **requires** labels on realistic AI content and may auto-label it anyway. YouTube and Meta have disclosure toggles too. · *Confidence: high*
 - **Always label.** Labeled AI content keeps its reach. Unlabeled content risks removal and is the most likely reason an account loses monetization.
 
+## 7. What the biggest fruit drama teaches us
+***Fruit Love Island*** (TikTok, launched March 13, 2026): about **2–4 minute** vertical episodes, **one a day**, 28 episodes over 2 seasons. It reached about 3M followers in roughly 9 days. It **invited viewers to suggest plot ideas**, and a host read viewer comments to the contestants. Production stopped March 28; some episodes were later removed. It used the real *Love Island* theme music (we don't know if that caused the removals). Critics called it "AI slop", and its visual glitches became part of the joke. · *Confidence: high (Wikipedia + several outlets)*
+
+**Lessons we applied:** post daily with a buffer, build in audience participation, and use licensed music only (see START-HERE Part 4).
+
+**How creators make them** (vendor guides, so *medium* confidence): short AI clips (about 5–15 sec each) generated from still images, then voices, subtitles and music added in an editor. Dreamina's **Multiframes** animates up to 10 images as consecutive scenes, with Seedance 2.0 Fast recommended at 9:16. A 1–2 minute short drama is typically **8–15 scenes**, and ours have 11–13. Added a Multiframes speed tip to `capcut-ep01.md`.
+
 ---
 
 ## Other risks we planned for
@@ -73,3 +80,11 @@ Fact-checks behind the launch plan. Most sources are creator-industry blogs, not
 - [Ko-fi Help: What is Ko-fi](https://help.ko-fi.com/hc/en-us/articles/115004000994-What-is-Ko-fi)
 - [Ko-fi Help: Memberships](https://help.ko-fi.com/hc/en-us/articles/4402945994001)
 - [Ruzuku: Ko-fi pricing](https://www.ruzuku.com/learn/articles/ko-fi-pricing)
+- [Wikipedia: Fruit Love Island](https://en.wikipedia.org/wiki/Fruit_Love_Island)
+- [Gigazine: Fruit Love Island](https://wbgsv0a.gigazine.net/gsc_news/en/20260330-fruit-love-island-ai-movie)
+- [Know Your Meme: AI Fruit Love Island explained](https://trending.knowyourmeme.com/editorials/guides/what-is-ai-fruit-love-island-and-why-is-everyone-going-crazy-for-it-the-controversial-ai-generated-reality-tv-show-explained)
+- [Blavity: Fruit Love Island series](https://blavity.com/fruit-love-island-series-tiktok)
+- [Dreamina: AI fruit drama guide](https://dreamina.capcut.com/ai-video/ai-fruit-drama)
+- [Dreamina: AI fruit drama maker](https://dreamina.capcut.com/ai-video/ai-fruit-drama-maker)
+- [CyberLink: How to create an AI short drama](https://www.cyberlink.com/blog/trending-topics/5460/how-to-create-ai-short-drama)
+- [EmpirioLabs: How to create viral fruit drama videos](https://empiriolabs.ai/blog/how-to-create-viral-fruit-drama-videos)

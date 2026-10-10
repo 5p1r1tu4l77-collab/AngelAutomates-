@@ -1,6 +1,6 @@
 # Season 1 Outline — *Rotten to the Core*
 
-All 20 episodes and a trailer are fully scripted in `episodes/`, with Spanish versions of the free run (Eps 1–8 + trailer) in `episodes-es/`. See `START-HERE.md` for the launch plan.
+All 20 episodes and a trailer are fully scripted in `episodes/`, with the full Spanish season (Eps 1–20 + trailer) in `episodes-es/`. See `START-HERE.md` for the launch plan.
 
 **Paywall plan:** Eps 1–8 free. Ep 8 ends on the season's biggest twist.
 

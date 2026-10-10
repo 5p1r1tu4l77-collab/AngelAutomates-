@@ -1,11 +1,11 @@
 # START HERE — Launch Plan for *Rotten to the Core*
 
-Everything is written: all 20 episodes, a trailer, the Spanish versions of the free run, and every prompt. **This page is your to-do list from today to your first dollar.** Do the steps in order and tick them off.
+Everything is written: all 20 episodes and a trailer in English and Spanish, and every prompt. **This page is your to-do list from today to your first dollar.** Do the steps in order and tick them off.
 
 **Where things are:**
 - `capcut-ep01.md`: how to make an episode in CapCut, step by step. Every episode works the same way.
 - `episodes/`: English scripts, `ep01`–`ep20` + `trailer`.
-- `episodes-es/`: Spanish scripts, `ep01`–`ep08` + `trailer`.
+- `episodes-es/`: Spanish scripts, `ep01`–`ep20` + `trailer`.
 - `series-bible.md`: what every character looks like (use these if an image comes out wrong).
 - `RESEARCH.md`: what we checked about platform rules and payouts, with sources.
 
@@ -79,6 +79,11 @@ Post English at **12pm and 7pm** your time. Post Spanish at the same times on th
 **YouTube rule:** post each episode **once** and never re-upload re-cuts there. YouTube stops paying channels that look repetitive or template-made. Recaps and spotlights are fine on YouTube as long as each is a genuinely new edit.
 
 **Prove a person makes this show:** post a behind-the-scenes video at least once a week (your CapCut screen, the script, picking voices). It grows well, and it's your evidence of "original creative input" if a platform ever questions the account.
+
+**Three lessons from *Fruit Love Island*, the biggest fruit drama (about 3M followers in 9 days; see `RESEARCH.md`):**
+1. **Never miss a day.** It posted a new episode daily. That's why you finish Eps 1–8 *before* launch: the buffer protects your streak.
+2. **Let the audience steer.** It asked viewers for plot ideas. Every pinned comment asks a question (they're already written in each post kit). Reply to the best comments with a **video reply**. Once a week, sneak a top fan theory into an upcoming episode as a background detail and credit it ("idea from @username"). Fans who see their idea on screen share it.
+3. **Licensed music only.** Some of its episodes were later taken down, and it had used the real *Love Island* theme. Never use copyrighted songs; stick to CapCut's or the platform's music library.
 
 After week 2: post 1 clip a day. When an episode clearly breaks out, start **Season 2** planning.
 
