@@ -90,7 +90,11 @@ def get_client(space: str, token: str | None):
     from gradio_client import Client
 
     if token:
-        return Client(space, hf_token=token)
+        try:
+            return Client(space, token=token)
+        except TypeError:
+            # older gradio_client used hf_token=
+            return Client(space, hf_token=token)
     return Client(space)
 
 
