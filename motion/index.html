@@ -1,0 +1,308 @@
+<title>Angel Automates Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one 1080×1080 square stage, scaled to fit, five timed scenes on an 18s loop, controls below. */
+:root{
+  --bg:#0b0d12; --panel:#12151d; --panel2:#181c27; --line:#242a38;
+  --text:#e8ebf2; --muted:#9aa3b5; --accent:#6ea8fe; --accent2:#9d7bff;
+  --grad:linear-gradient(135deg,#6ea8fe,#9d7bff);
+  --surround:#07080c;
+  --display:"Bricolage Grotesque",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --body:"Manrope",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--surround);color:var(--text);font-family:var(--body);margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px;box-sizing:border-box;overflow:hidden}
+#viewport{position:relative;flex:0 0 auto}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1080px;transform-origin:0 0;background:var(--bg);overflow:hidden;border-radius:18px}
+body.capture{padding:0;gap:0;justify-content:flex-start;align-items:flex-start}
+body.capture #stage{border-radius:0}
+body.capture #controls{display:none}
+.abs{position:absolute}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.scene{position:absolute;inset:0}
+/* background */
+.glow{position:absolute;width:900px;height:900px;border-radius:50%;filter:blur(20px)}
+#g1{background:radial-gradient(circle,rgba(110,168,254,.22),transparent 62%)}
+#g2{background:radial-gradient(circle,rgba(157,123,255,.20),transparent 62%)}
+#dots{position:absolute;inset:0;background-image:radial-gradient(rgba(154,163,181,.16) 1.4px,transparent 1.6px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.spark{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+/* scene 1 */
+#mark{left:430px;top:200px;width:220px;height:220px;overflow:visible}
+#halo{left:340px;top:110px;width:400px;height:400px;border-radius:50%;border:3px solid var(--accent)}
+#word{left:0;right:0;top:500px;text-align:center;font-family:var(--display);font-weight:800;font-size:118px;letter-spacing:-.035em;line-height:1}
+#word span{display:inline-block}
+#tag1{left:0;right:0;top:660px;text-align:center;font-size:32px;color:var(--muted);font-weight:500;letter-spacing:.01em}
+/* scene 2 */
+#kick2{left:120px;top:250px;font-size:26px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.line{position:absolute;left:112px;overflow:hidden;font-family:var(--display);font-weight:800;font-size:112px;letter-spacing:-.04em;line-height:1.12;padding-bottom:6px}
+.line > span{display:inline-block}
+#swoosh{left:112px;top:775px;width:620px;height:40px;overflow:visible}
+/* scene 3 */
+#kick3{left:0;right:0;top:92px;text-align:center;font-family:var(--display);font-weight:700;font-size:52px;letter-spacing:-.02em}
+#browser{left:90px;top:210px;width:760px;height:560px;border-radius:20px;background:var(--panel);border:2px solid var(--line);overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.bar{height:52px;display:flex;align-items:center;gap:10px;padding:0 20px;border-bottom:2px solid var(--line);background:var(--panel2)}
+.dot{width:14px;height:14px;border-radius:50%;background:#3a4358}
+.url{margin-left:18px;flex:1;height:30px;border-radius:15px;background:var(--bg);color:var(--muted);font-size:17px;display:flex;align-items:center;padding:0 16px;font-weight:500}
+.hero{position:absolute;left:20px;right:20px;top:72px;height:290px;border-radius:14px;overflow:hidden}
+.heroL{position:absolute;inset:0;padding:40px 40px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
+.heroL b{font-family:var(--display);font-size:58px;letter-spacing:-.03em;line-height:1}
+.heroL i{font-style:normal;font-size:22px;opacity:.85}
+.heroL em{font-style:normal;display:inline-block;align-self:flex-start;margin-top:8px;padding:10px 22px;border-radius:999px;font-weight:700;font-size:18px;color:#111}
+.cards{position:absolute;left:20px;right:20px;top:382px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.c{height:150px;border-radius:14px;background:var(--panel2);border:2px solid var(--line);padding:18px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px}
+.c .ic{width:38px;height:38px;border-radius:10px;background:var(--grad);opacity:.85}
+.c .b1{height:12px;width:80%;border-radius:6px;background:#2c3345}
+.c .b2{height:12px;width:55%;border-radius:6px;background:#232937}
+#phone{left:740px;top:380px;width:250px;height:500px;border-radius:40px;background:#05060a;border:3px solid #2c3345;padding:12px;box-sizing:border-box;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+#phone .scr{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--panel)}
+.notch{position:absolute;left:50%;top:8px;width:84px;height:22px;margin-left:-42px;border-radius:12px;background:#05060a;z-index:3}
+.pHero{position:absolute;left:0;right:0;top:0;height:250px}
+.pL{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.pL b{font-family:var(--display);font-size:30px;letter-spacing:-.02em;line-height:1.02}
+.pL em{font-style:normal;align-self:flex-start;margin-top:6px;padding:7px 14px;border-radius:999px;font-weight:700;font-size:13px;color:#111}
+.pBars{position:absolute;left:18px;right:18px;top:272px;display:flex;flex-direction:column;gap:12px}
+.pBars div{height:46px;border-radius:12px;background:var(--panel2);border:2px solid var(--line)}
+#label3{left:90px;top:800px;display:flex;align-items:baseline;gap:18px;height:60px}
+#label3 .nm{font-family:var(--display);font-weight:700;font-size:42px;letter-spacing:-.02em}
+#label3 .ty{font-size:22px;color:var(--muted);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.swap{position:absolute;left:0;top:0;white-space:nowrap;display:flex;align-items:baseline;gap:18px}
+#mobileTag{left:740px;top:902px;width:250px;text-align:center;font-size:22px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+/* scene 4 */
+#kick4{left:0;right:0;top:110px;text-align:center;font-family:var(--display);font-weight:700;font-size:56px;letter-spacing:-.02em}
+#kick4 small{display:block;font-family:var(--body);font-size:26px;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:14px}
+.tile{position:absolute;width:400px;height:270px;border-radius:24px;background:var(--panel);border:2px solid var(--line);padding:38px 40px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;gap:8px}
+.tile .n{font-family:var(--display);font-weight:800;font-size:116px;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.tile .n small{font-size:40px;letter-spacing:-.01em;color:var(--muted);-webkit-text-fill-color:var(--muted);margin-left:6px}
+.tile .l{font-size:26px;color:var(--muted);font-weight:600}
+/* scene 5 */
+#h5{left:0;right:0;top:250px;text-align:center;font-family:var(--display);font-weight:800;font-size:124px;letter-spacing:-.045em;line-height:1.02}
+#s5{left:150px;right:150px;top:540px;text-align:center;font-size:34px;color:var(--muted);line-height:1.4;font-weight:500}
+#btn5{left:290px;top:700px;width:500px;height:104px;border-radius:999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:36px;color:#fff;overflow:hidden;box-shadow:0 14px 50px rgba(110,168,254,.45)}
+#btn5 .sh{position:absolute;top:0;bottom:0;width:120px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent)}
+#ripple{left:0;top:0;width:40px;height:40px;border-radius:50%;border:2px solid rgba(255,255,255,.8);margin:-20px 0 0 -20px}
+#cursor{left:0;top:0;width:44px;height:56px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+#mail5{left:0;right:0;top:850px;text-align:center;font-size:30px;font-weight:700;color:var(--text)}
+#logo5{left:0;right:0;top:960px;text-align:center;font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.02em}
+#fade{inset:0;background:#000;pointer-events:none}
+/* controls */
+#controls{display:flex;align-items:center;gap:12px;width:min(100%,640px);color:var(--muted);font-size:13px}
+#controls button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font:600 13px var(--body);cursor:pointer}
+#controls button:hover{border-color:var(--accent)}
+#controls button:focus-visible,#scrub:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#scrub{flex:1;min-width:0;accent-color:var(--accent)}
+#time{font-variant-numeric:tabular-nums;min-width:74px;text-align:right}
+#controls a{color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap}
+</style>
+
+<div id="viewport"><div id="stage">
+  <div id="g1" class="glow"></div><div id="g2" class="glow"></div><div id="dots"></div><div id="sparks"></div>
+
+  <div class="scene" id="sc1">
+    <div id="halo" class="abs"></div>
+    <svg id="mark" class="abs" viewBox="0 0 220 220">
+      <defs><linearGradient id="mg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="220" y2="220"><stop offset="0" stop-color="#6ea8fe"/><stop offset="1" stop-color="#9d7bff"/></linearGradient></defs>
+      <path id="mA" d="M30 195 L110 28 L190 195" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="mX" d="M68 132 L152 132" fill="none" stroke="url(#mg)" stroke-width="16" stroke-linecap="round"/>
+      <circle class="node" cx="110" cy="28" r="15" fill="#0b0d12" stroke="#e8ebf2" stroke-width="6"/>
+      <circle class="node" cx="30" cy="195" r="15" fill="#0b0d12" stroke="#e8ebf2" stroke-width="6"/>
+      <circle class="node" cx="190" cy="195" r="15" fill="#0b0d12" stroke="#e8ebf2" stroke-width="6"/>
+    </svg>
+    <div id="word" class="abs"></div>
+    <div id="tag1" class="abs">Websites &amp; automations for local businesses</div>
+  </div>
+
+  <div class="scene" id="sc2">
+    <div id="kick2" class="abs">Own a local business?</div>
+    <div class="line" style="top:300px"><span>Your business</span></div>
+    <div class="line" style="top:425px"><span>deserves a website</span></div>
+    <div class="line" style="top:550px"><span>that brings in</span></div>
+    <div class="line" style="top:675px"><span class="grad-text">customers.</span></div>
+    <svg id="swoosh" class="abs" viewBox="0 0 620 40"><path id="swP" d="M6 26 C 160 6, 380 6, 612 22" fill="none" stroke="url(#mg)" stroke-width="10" stroke-linecap="round"/></svg>
+  </div>
+
+  <div class="scene" id="sc3">
+    <div id="kick3" class="abs">Built custom. Built for phones.</div>
+    <div id="browser" class="abs">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url" id="url">casalumbre.com</span></div>
+      <div class="hero" id="hero"></div>
+      <div class="cards"><div class="c"><span class="ic"></span><span class="b1"></span><span class="b2"></span></div><div class="c"><span class="ic"></span><span class="b1"></span><span class="b2"></span></div><div class="c"><span class="ic"></span><span class="b1"></span><span class="b2"></span></div></div>
+    </div>
+    <div id="phone" class="abs"><div class="scr"><div class="notch"></div><div class="pHero" id="pHero"></div><div class="pBars"><div></div><div></div><div></div></div></div></div>
+    <div id="label3" class="abs"></div>
+    <div id="mobileTag" class="abs">100% mobile-friendly</div>
+  </div>
+
+  <div class="scene" id="sc4">
+    <div id="kick4" class="abs">One flat price. Zero monthly fees.<small>Half up front, half when you approve the finished site.</small></div>
+    <div class="tile" style="left:120px;top:340px"><div class="n grad-text" id="n1">$350</div><div class="l">flat. No surprises.</div></div>
+    <div class="tile" style="left:560px;top:340px"><div class="n grad-text" id="n2">&lt;7<small>days</small></div><div class="l">from yes to live</div></div>
+    <div class="tile" style="left:120px;top:650px"><div class="n grad-text" id="n3">$0<small>/mo</small></div><div class="l">hosting, free forever</div></div>
+    <div class="tile" style="left:560px;top:650px"><div class="n grad-text" id="n4">4<small>pages</small></div><div class="l">included, all custom</div></div>
+  </div>
+
+  <div class="scene" id="sc5">
+    <div id="h5" class="abs">Get a <span class="grad-text">free</span><br>mockup.</div>
+    <div id="s5" class="abs">Send your business name and town. A live homepage lands within a day.</div>
+    <div id="btn5" class="abs"><span class="sh"></span><span style="position:relative">Start yours today &rarr;</span></div>
+    <div id="ripple" class="abs"></div>
+    <div id="mail5" class="abs">angenavarr77@gmail.com</div>
+    <div id="logo5" class="abs">Angel <span class="grad-text">Automates</span></div>
+    <svg id="cursor" class="abs" viewBox="0 0 44 56"><path d="M4 3 L4 46 L15 36 L23 53 L31 49 L23 33 L38 33 Z" fill="#fff" stroke="#0b0d12" stroke-width="3" stroke-linejoin="round"/></svg>
+  </div>
+
+  <div id="fade" class="abs"></div>
+</div></div>
+
+<div id="controls">
+  <button id="play" type="button" aria-label="Pause">Pause</button>
+  <input id="scrub" type="range" min="0" max="18000" value="0" aria-label="Timeline">
+  <span id="time">0.0s / 18s</span>
+  <a href="angel-automates-promo.mp4" target="_blank" rel="noopener">MP4</a>
+</div>
+
+<script>
+const DUR = 18;
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const clamp = x => Math.min(1, Math.max(0, x));
+const P = (t, a, b) => clamp((t - a) / (b - a));
+const out = x => 1 - Math.pow(1 - x, 3);
+const inout = x => x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2;
+const back = x => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3*Math.pow(x-1,3) + c1*Math.pow(x-1,2); };
+const lerp = (a, b, k) => a + (b - a) * k;
+const capture = new URLSearchParams(location.search).has('capture') || location.hash === '#capture';
+if (capture) document.body.classList.add('capture');
+
+// build wordmark letters
+const word = $('#word');
+[...'Angel'].forEach(c => { const s = document.createElement('span'); s.textContent = c; word.appendChild(s); });
+word.appendChild(document.createTextNode(' '));
+[...'Automates'].forEach(c => { const s = document.createElement('span'); s.textContent = c; s.className = 'grad-text'; word.appendChild(s); });
+const letters = $$('#word span');
+
+// sparks (deterministic)
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const sparks = Array.from({length: 26}, () => {
+  const el = document.createElement('div'); el.className = 'spark'; $('#sparks').appendChild(el);
+  return {el, x: rnd()*1080, y: rnd()*1080, v: 20 + rnd()*50, s: .4 + rnd()*1.1, ph: rnd()*6.28, c: rnd() > .5};
+});
+sparks.forEach(p => { if (p.c) p.el.style.background = 'var(--accent2)'; });
+
+// themes for scene 3
+const themes = [
+  {nm:'Casa Lumbre', ty:'Restaurant', url:'casalumbre.com', tag:'Wood-fired kitchen & bar', g:'linear-gradient(140deg,#3d1f14,#8a4b2d 60%,#c98a4b)', fg:'#ffe9d1', cta:'#f2c48a', btn:'See the menu'},
+  {nm:'Ironwood Builders', ty:'Contractor', url:'ironwoodbuilders.com', tag:'Built right. On time.', g:'linear-gradient(140deg,#101820,#1f3a54 60%,#e8a33d)', fg:'#ffffff', cta:'#e8a33d', btn:'Get a free quote'},
+  {nm:'Velvet & Vine', ty:'Salon', url:'velvetandvine.com', tag:'Hair · Color · Care', g:'linear-gradient(140deg,#2a1e2b,#7d4a6d 60%,#d9a7c7)', fg:'#fff5fa', cta:'#f3cfe3', btn:'Book a chair'}
+];
+const esc = s => s.replace(/&/g,'&amp;');
+const heroLayers = themes.map(th => { const d = document.createElement('div'); d.className = 'heroL'; d.style.background = th.g; d.style.color = th.fg;
+  d.innerHTML = `<b>${esc(th.nm)}</b><i>${esc(th.tag)}</i><em style="background:${th.cta}">${th.btn}</em>`; $('#hero').appendChild(d); return d; });
+const phoneLayers = themes.map(th => { const d = document.createElement('div'); d.className = 'pL'; d.style.background = th.g; d.style.color = th.fg;
+  d.innerHTML = `<b>${esc(th.nm)}</b><em style="background:${th.cta}">${th.btn}</em>`; $('#pHero').appendChild(d); return d; });
+const labelLayers = themes.map(th => { const d = document.createElement('div'); d.className = 'swap';
+  d.innerHTML = `<span class="nm">${esc(th.nm)}</span><span class="ty">${th.ty}</span>`; $('#label3').appendChild(d); return d; });
+
+const lenA = $('#mA').getTotalLength(), lenX = $('#mX').getTotalLength(), lenS = $('#swP').getTotalLength();
+const set = (el, o, tf, extra) => { el.style.opacity = o; if (tf !== undefined) el.style.transform = tf; if (extra) Object.assign(el.style, extra); };
+const scenes = {sc1:[0,3.6], sc2:[3.2,7.0], sc3:[6.8,11.4], sc4:[11.2,14.6], sc5:[14.4,18]};
+
+function render(t) {
+  for (const [id, [a, b]] of Object.entries(scenes)) $('#'+id).style.display = (t >= a && t < b) ? '' : 'none';
+
+  // background
+  set($('#g1'), 1, `translate(${-160 + Math.sin(t*.35)*140}px, ${-260 + Math.cos(t*.27)*120}px)`);
+  set($('#g2'), 1, `translate(${380 + Math.cos(t*.3)*150}px, ${420 + Math.sin(t*.4)*130}px)`);
+  sparks.forEach(p => { const y = ((p.y - t*p.v) % 1080 + 1080) % 1080;
+    set(p.el, (.15 + .35*Math.abs(Math.sin(t*1.3 + p.ph))) * p.s, `translate(${p.x + Math.sin(t*.8+p.ph)*14}px, ${y}px) scale(${p.s})`); });
+
+  // scene 1: mark draws, nodes pop, wordmark rises
+  if (t < 3.6) {
+    const d = out(P(t, .15, 1.2)), dx = out(P(t, .8, 1.35));
+    $('#mA').style.strokeDasharray = lenA; $('#mA').style.strokeDashoffset = lenA * (1 - d);
+    $('#mX').style.strokeDasharray = lenX; $('#mX').style.strokeDashoffset = lenX * (1 - dx);
+    $$('.node').forEach((n, i) => { const k = back(P(t, .25 + i*.32, .6 + i*.32)); n.style.transformOrigin = `${n.getAttribute('cx')}px ${n.getAttribute('cy')}px`; n.style.transform = `scale(${k})`; n.style.opacity = clamp(k*2); });
+    const h = P(t, 1.25, 2.3); set($('#halo'), (1 - h) * .7 * (h > 0), `scale(${lerp(.5, 1.5, out(h))})`);
+    letters.forEach((l, i) => { const k = out(P(t, 1.0 + i*.04, 1.55 + i*.04)); set(l, k, `translateY(${(1-k)*60}px)`); });
+    const tg = out(P(t, 1.9, 2.5)); set($('#tag1'), tg, `translateY(${(1-tg)*20}px)`);
+    const o = inout(P(t, 3.0, 3.55)); set($('#sc1'), 1 - o, `translateY(${-o*50}px) scale(${1 + o*.04})`, {filter: `blur(${o*8}px)`});
+  }
+  // scene 2: kinetic headline
+  if (t >= 3.2 && t < 7.0) {
+    const k = out(P(t, 3.35, 3.8)); set($('#kick2'), k, `translateX(${(1-k)*-30}px)`);
+    $$('#sc2 .line > span').forEach((s, i) => {
+      const a = out(P(t, 3.5 + i*.2, 4.15 + i*.2)), b = inout(P(t, 6.35 + i*.07, 6.85 + i*.07));
+      s.style.transform = `translateY(${(1 - a) * 110 - b * 110}%)`;
+    });
+    const sw = out(P(t, 4.6, 5.3)), swo = P(t, 6.5, 6.85);
+    $('#swP').style.strokeDasharray = lenS; $('#swP').style.strokeDashoffset = lenS * (1 - sw); $('#swoosh').style.opacity = 1 - swo;
+    $('#kick2').style.opacity = k * (1 - P(t, 6.3, 6.6));
+  }
+  // scene 3: site assembles, themes swap
+  if (t >= 6.8 && t < 11.4) {
+    const kk = out(P(t, 6.9, 7.4)); set($('#kick3'), kk, `translateY(${(1-kk)*24}px)`);
+    const br = back(P(t, 7.0, 7.6)); set($('#browser'), clamp(br*1.5), `translateY(${(1-br)*80}px) scale(${lerp(.92,1,br)})`);
+    const hr = out(P(t, 7.35, 7.85)); set($('#hero'), hr, `scale(${lerp(.94,1,hr)})`);
+    $$('#browser .c').forEach((c, i) => { const k = back(P(t, 7.6 + i*.12, 8.0 + i*.12)); set(c, clamp(k*1.4), `translateY(${(1-k)*40}px)`); });
+    const ph = back(P(t, 8.1, 8.7)); set($('#phone'), clamp(ph*1.5), `translateX(${(1-ph)*260}px) rotate(${(1-ph)*8}deg)`);
+    const mt = out(P(t, 8.7, 9.1)); $('#mobileTag').style.opacity = mt;
+    // theme weights: 0 until 8.9, 1 until 9.9, 2 after
+    const w1 = inout(P(t, 8.9, 9.25)), w2 = inout(P(t, 9.9, 10.25));
+    const ws = [1 - w1, w1 - w2, w2];
+    heroLayers.forEach((l, i) => l.style.opacity = ws[i]);
+    phoneLayers.forEach((l, i) => l.style.opacity = ws[i]);
+    labelLayers.forEach((l, i) => { const o = ws[i]; set(l, o * out(P(t, 7.5, 7.9)), `translateY(${(1 - o) * 18}px)`); });
+    $('#url').textContent = themes[t < 9.07 ? 0 : t < 10.07 ? 1 : 2].url;
+    const o = inout(P(t, 10.9, 11.35)); set($('#sc3'), 1 - o, `scale(${1 - o*.05})`);
+  }
+  // scene 4: stats count
+  if (t >= 11.2 && t < 14.6) {
+    const kk = out(P(t, 11.3, 11.8)); set($('#kick4'), kk, `translateY(${(1-kk)*24}px)`);
+    $$('#sc4 .tile').forEach((el, i) => { const k = back(P(t, 11.5 + i*.13, 12.0 + i*.13)); set(el, clamp(k*1.4), `translateY(${(1-k)*60}px) scale(${lerp(.9,1,k)})`); });
+    const c = i => out(P(t, 11.6 + i*.13, 12.7 + i*.13));
+    $('#n1').textContent = '$' + Math.round(350 * c(0));
+    $('#n2').innerHTML = '&lt;' + Math.round(lerp(30, 7, c(1))) + '<small>days</small>';
+    $('#n3').innerHTML = '$' + Math.round(lerp(99, 0, c(2))) + '<small>/mo</small>';
+    $('#n4').innerHTML = Math.max(1, Math.round(4 * c(3))) + '<small>pages</small>';
+    const o = inout(P(t, 14.1, 14.55)); set($('#sc4'), 1 - o, `translateY(${-o*40}px)`);
+  }
+  // scene 5: CTA, cursor click
+  if (t >= 14.4) {
+    const h = out(P(t, 14.5, 15.1)); set($('#h5'), h, `translateY(${(1-h)*50}px) scale(${lerp(1.06,1,h)})`);
+    const s = out(P(t, 14.9, 15.4)); set($('#s5'), s, `translateY(${(1-s)*20}px)`);
+    const b = back(P(t, 15.1, 15.6)), press = Math.sin(Math.PI * P(t, 16.3, 16.55)) * .05;
+    set($('#btn5'), clamp(b*1.4), `scale(${lerp(.8,1,b) - press})`);
+    $('#btn5 .sh').style.left = lerp(-140, 520, P(t, 15.6, 16.2)) + 'px';
+    const cm = inout(P(t, 15.5, 16.3)), cx = lerp(1000, 610, cm), cy = lerp(1120, 760, cm) + Math.sin(cm*Math.PI)*-60;
+    set($('#cursor'), P(t, 15.5, 15.7) * (1 - P(t, 17.0, 17.3)), `translate(${cx}px, ${cy}px) scale(${1 - press*2})`);
+    const r = P(t, 16.38, 17.0); set($('#ripple'), (1 - r) * (r > 0), `translate(${610}px, ${762}px) scale(${lerp(.4, 5, out(r))})`);
+    const m = out(P(t, 16.5, 16.95)); set($('#mail5'), m, `translateY(${(1-m)*16}px)`);
+    const lg = out(P(t, 16.7, 17.1)); $('#logo5').style.opacity = lg;
+  }
+  $('#fade').style.opacity = Math.max(P(t, 17.55, 18), 1 - P(t, 0, .25));
+}
+
+// fit stage
+const vp = $('#viewport'), stage = $('#stage');
+function fit() {
+  if (capture) { vp.style.width = vp.style.height = '1080px'; stage.style.transform = 'none'; return; }
+  const avail = Math.min(innerWidth - 32, innerHeight - 32 - 60);
+  const sc = Math.max(.2, avail / 1080);
+  vp.style.width = vp.style.height = (1080 * sc) + 'px'; stage.style.transform = `scale(${sc})`;
+}
+addEventListener('resize', fit); fit();
+
+// playback
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let playing = !capture && !reduce, t0 = performance.now(), cur = reduce ? 16.9 : 0;
+const btn = $('#play'), scrub = $('#scrub'), time = $('#time');
+function ui() { btn.textContent = playing ? 'Pause' : 'Play'; btn.setAttribute('aria-label', btn.textContent); scrub.value = Math.round(cur*1000); time.textContent = cur.toFixed(1) + 's / ' + DUR + 's'; }
+function loop(now) { if (playing) { cur = ((now - t0) / 1000) % DUR; render(cur); ui(); } requestAnimationFrame(loop); }
+btn.onclick = () => { playing = !playing; t0 = performance.now() - cur*1000; ui(); };
+scrub.oninput = () => { cur = scrub.value / 1000; t0 = performance.now() - cur*1000; render(cur); ui(); };
+addEventListener('keydown', e => { if (e.code === 'Space' && e.target === document.body) { e.preventDefault(); btn.click(); } });
+window.seek = s => { cur = s; render(s); };
+render(cur); ui();
+if (!capture) requestAnimationFrame(loop);
+</script>
