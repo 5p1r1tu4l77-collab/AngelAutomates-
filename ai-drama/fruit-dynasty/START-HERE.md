@@ -48,12 +48,14 @@ Research (see `RESEARCH.md`) changed the order of where the money comes from:
 2. **YouTube Shorts:** YouTube says AI storytelling channels can be monetized. Apply for the Partner Program as soon as you qualify.
 3. **Your paywall** (below): you keep about $4.30 of every $4.99 sale after Ko-fi's 5% fee and card fees.
 4. **TikTok Creator Rewards:** treat as a bonus, not the plan. Rules on fully AI-made videos are unclear right now. TikTok is still your **#1 place to grow an audience**, because that's where fruit dramas go viral. Apply once you have about 10k followers and 100k views a month, keep episodes over 1 minute, and remember that only views watched for 5+ seconds count.
+
 **Setting up the paywall (Episodes 9–20):**
-   - Make a **Ko-fi** page (free). Add a shop item: **"Rotten to the Core: Full Season (Parts 9–20)", $4.99**.
-   - Upload Episodes 9–20 to YouTube as **Unlisted** (not Private) in one playlist. The buyer's delivery message is that playlist link.
-   - Put the Ko-fi link in the link in bio on every account.
-   - Spanish item: **"El Patrón del Huerto: Temporada completa", $4.99**.
-5. **Later:** once you have numbers, pitch the finished season to micro-drama apps and sell your workflow as a kit (see the main `ai-drama/README.md`).
+- Make a **Ko-fi** page (free). Add a shop item: **"Rotten to the Core: Full Season (Parts 9–20)", $4.99**.
+- Upload Episodes 9–20 to YouTube as **Unlisted** (not Private) in one playlist. The buyer's delivery message is that playlist link.
+- Put the Ko-fi link in the link in bio on every account.
+- Spanish item: **"El Patrón del Huerto: Temporada completa", $4.99**.
+
+**Later:** once you have numbers, pitch the finished season to micro-drama apps and sell your workflow as a kit (see the main `ai-drama/README.md`).
 
 ## Part 4 — Posting calendar (launch week + week 2)
 
