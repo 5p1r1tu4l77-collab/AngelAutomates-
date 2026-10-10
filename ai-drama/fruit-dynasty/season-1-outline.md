@@ -1,6 +1,6 @@
 # Season 1 Outline — *Rotten to the Core*
 
-Episodes 1–8 (the whole free run) are fully scripted in `episodes/`. Generate the rest with `python ../generate.py 9-20 --show fruit-dynasty` from the `ai-drama/` folder (see the main README).
+All 20 episodes and a trailer are fully scripted in `episodes/`, with Spanish versions of the free run (Eps 1–8 + trailer) in `episodes-es/`. See `START-HERE.md` for the launch plan.
 
 **Paywall plan:** Eps 1–8 free. Ep 8 ends on the season's biggest twist.
 

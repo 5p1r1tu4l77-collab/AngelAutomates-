@@ -55,6 +55,7 @@ CHARACTERS = {
     "don-pina": "photorealistic pineapple head with a tall spiky green crown and a golden scarred face, heavyset man's body, white suit with a red silk shirt, many gold rings, smoking a cigar",
     "el-jalapeno": "photorealistic glossy dark green jalapeño pepper head with narrow red eyes, lean man's body, long black leather coat, black gloves, standing in shadows",
     "aguacate": "photorealistic dark green bumpy avocado head, round gold glasses, older man's body, brown tweed suit, bow tie, leather briefcase",
+    "coco-jr": "photorealistic young green coconut as the head with a pale scar across the husk, determined dark eyes, muscular young man's body, faded canvas dock worker's jacket, gray beanie, work gloves tucked in a pocket",
     "uva-brothers": "two identical men, each with a photorealistic cluster of purple grapes as a head, matching black tracksuits, gold chains, standing side by side",
 }
 

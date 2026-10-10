@@ -66,6 +66,11 @@ Paste the **Locked look** verbatim wherever the tag appears. Generate one master
 - **Who:** Mango's muscle. Identical, always together, always eating.
 - **Locked look:** *two identical men, each with a photorealistic cluster of purple grapes as a head, matching black tracksuits, gold chains, standing side by side*
 
+### [COCO JR.] — Coco Jr., 22 · the secret fourth son (from Ep 15)
+- **Who:** Don Coco's hidden son, raised on the docks by Plátano. Tough, proud, distrusts rich people. El Jalapeño's best friend since childhood.
+- **Locked look:** *photorealistic young green coconut as the head with a pale scar across the husk, determined dark eyes, muscular young man's body, faded canvas dock worker's jacket, gray beanie, work gloves tucked in a pocket*
+- **Voice:** Rough street accent, warm underneath.
+
 ## Locations
 
 | Tag | Description for prompts |

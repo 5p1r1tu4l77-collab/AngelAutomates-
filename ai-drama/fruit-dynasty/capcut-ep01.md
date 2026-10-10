@@ -57,6 +57,9 @@ Each prompt puts the face right after the head (that's what fixed the blank-face
 **Aguacate** (Ep 7, 8)
 > photorealistic dark green bumpy avocado as the head, with a clearly visible human face on the avocado skin: nervous human eyes behind round gold glasses, eyebrows, nose and mouth, older man's body, brown tweed suit, bow tie, holding a leather briefcase, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
 
+**Coco Jr.** (Ep 15–20)
+> photorealistic young green coconut as the head with a pale scar across the husk, with a clearly visible human face on the coconut: determined dark human eyes, eyebrows, nose and mouth, muscular young man's body, faded canvas dock worker's jacket, gray beanie, cinematic portrait, warm amber and deep green color grade, film grain, dramatic lighting, 35mm
+
 **Check every image:** fruit texture looks real, two eyes plus a mouth, human hands, right outfit. If one is off, regenerate rather than settling, because these images are your actors for all 20 episodes.
 
 ## Step 3 — Pick each character's voice (10 min)
@@ -118,3 +121,15 @@ Add this to the end of **every** scene prompt:
 - Use the caption, hashtags and pinned comment from the **Post kit** at the bottom of `episodes/ep01.md`.
 - **Turn on the AI-generated content label** on TikTok, YouTube and Instagram. It's required, and skipping it can get the account demonetized.
 - Make Episodes 2 and 3 the same way before launch, then post all three on day one so new viewers can binge.
+
+---
+
+## Episodes 2–20 and the trailer
+
+Every episode file uses the same format as Episode 1, so the same steps work for all of them:
+
+- **Reference images:** for each shot, use the masters of the characters named in brackets, e.g. `[LIMÓN]`, `[KIWI]`.
+- **Scene prompt:** use the shot's **Visual prompt** column, with the style line added to the end.
+- **Motion prompt:** use the **Camera** column, plus the action in the visual prompt.
+- **Audio:** use the **Dialogue / VO** and **SFX** columns.
+- **Spanish versions:** duplicate the finished English CapCut project. Replace the voice clips with Spanish text-to-speech from `episodes-es/`, redo the lip-sync shots, and re-run auto captions in Spanish. The visuals stay exactly the same.
