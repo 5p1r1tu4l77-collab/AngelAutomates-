@@ -64,7 +64,10 @@ HEIGHT = 1344
 
 def build_prompt(character: str) -> str:
     locked = CHARACTERS[character]
-    return f"{locked}, cinematic portrait, {STYLE_LINE}"
+    # Visual rules from bible: fruit head must have expressive human eyes,
+    # eyebrows and mouth. Enforce this so FLUX doesn't return a blank fruit.
+    face = "with expressive human eyes, eyebrows and mouth on the fruit"
+    return f"{locked} {face}, cinematic portrait, {STYLE_LINE}"
 
 
 def next_index(out_dir: Path) -> int:
