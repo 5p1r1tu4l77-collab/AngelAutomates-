@@ -11,6 +11,7 @@ Portfolio and demo sites for Angel Automates — fast, affordable websites and a
 - `demos/contractor/` — demo site: Ironwood Builders (contractor)
 - `demos/salon/` — demo site: Velvet & Vine (salon)
 - `playbook/` — business playbook: Day-1 checklist, outreach kit, pricing sheet, lead tracker
+- `playbook/cantina-ai-drama.md` — Cantina AI video guide + "Skyfall Crown" sci-fi/fantasy drama kit
 
 ## Stack
 
